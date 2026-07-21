@@ -1,0 +1,100 @@
+site_name: GCP Mastery Path
+site_description: A structured, module-wise Google Cloud Platform training program from entry level to master level, focused on the gcloud CLI, core GCP services, and production cloud architecture.
+site_url: https://sigilipelli.github.io/gcp-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/gcp-mastery-path
+repo_name: gcp-mastery-path
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Privacy Policy: privacy.md
+  - "Level 1 · Entry":
+      - Overview: level-1/index.md
+      - "01 · Setup & gcloud CLI": level-1/01-setup.md
+      - "02 · IAM & Security Basics": level-1/02-iam-security.md
+      - "03 · Compute Engine": level-1/03-compute-engine.md
+      - "04 · Cloud Storage": level-1/04-cloud-storage.md
+      - "05 · VPC Networking Basics": level-1/05-vpc-networking.md
+      - "06 · Cloud SQL": level-1/06-cloud-sql.md
+      - "07 · Cloud Functions & Cloud Run": level-1/07-serverless-run-functions.md
+      - "08 · Cloud Monitoring & Logging": level-1/08-monitoring-logging.md
+      - "09 · Infrastructure as Code (Terraform on GCP)": level-1/09-terraform-intro.md
+      - "10 · Capstone Project": level-1/10-capstone-project.md
+  - "Level 2 · Intermediate":
+      - Overview: level-2/index.md
+      - "01 · Containers on GCP (GKE Basics)": level-2/01-gke-containers.md
+      - "02 · Autoscaling & Load Balancing": level-2/02-autoscaling-load-balancing.md
+      - "03 · Cloud DNS & Domains": level-2/03-cloud-dns.md
+      - "04 · Pub/Sub Messaging": level-2/04-pubsub-messaging.md
+      - "05 · Firestore & Bigtable Deep Dive": level-2/05-firestore-bigtable.md
+      - "06 · App Engine": level-2/06-app-engine.md
+      - "07 · Secret Manager & Config": level-2/07-secret-manager.md
+      - "08 · Cloud CDN & Cloud Armor": level-2/08-cloud-cdn-armor.md
+      - "09 · Cost Management & Billing": level-2/09-cost-management-billing.md
+      - "10 · Project — Scalable Web App": level-2/10-project-scalable-web-app.md
+  - "Level 3 · Advanced":
+      - Overview: level-3/index.md
+      - "01 · Advanced VPC (Peering, Shared VPC, Interconnect)": level-3/01-advanced-vpc.md
+      - "02 · Kubernetes on GCP (GKE Advanced)": level-3/02-gke-advanced.md
+      - "03 · Cloud Workflows & Orchestration": level-3/03-workflows-orchestration.md
+      - "04 · Advanced IAM (Org Policies, Custom Roles)": level-3/04-advanced-iam.md
+      - "05 · Terraform on GCP (Advanced)": level-3/05-terraform-on-gcp.md
+      - "06 · CI/CD (Cloud Build, Artifact Registry)": level-3/06-cicd-cloud-build.md
+      - "07 · Multi-Region & Disaster Recovery": level-3/07-multi-region-disaster-recovery.md
+      - "08 · Advanced Monitoring (Cloud Trace & Profiler)": level-3/08-advanced-monitoring-trace.md
+      - "09 · Security Deep Dive (Security Command Center, VPC Service Controls)": level-3/09-security-deep-dive.md
+      - "10 · Project — Multi-Tier CI/CD Pipeline": level-3/10-project-cicd-pipeline.md
+  - "Level 4 · Master":
+      - Overview: level-4/index.md
+      - "01 · GCP Architecture Framework": level-4/01-architecture-framework.md
+      - "02 · Advanced Serverless (Eventarc at Scale)": level-4/02-advanced-serverless-eventarc.md
+      - "03 · Data Analytics (BigQuery, Dataflow, Dataproc)": level-4/03-data-analytics-bigquery.md
+      - "04 · Kubernetes at Scale (GKE Production Patterns)": level-4/04-gke-at-scale.md
+      - "05 · Multi-Project Strategy (Organizations, Folders)": level-4/05-multi-project-strategy.md
+      - "06 · Cost Optimization at Scale": level-4/06-cost-optimization-at-scale.md
+      - "07 · Advanced Networking (Interconnect, Network Connectivity Center)": level-4/07-advanced-networking.md
+      - "08 · Compliance & Governance (Assured Workloads, Policy Intelligence)": level-4/08-compliance-governance.md
+      - "09 · Chaos Engineering & Resilience Testing": level-4/09-chaos-engineering-resilience.md
+      - "10 · Capstone Project — Production-Grade Cloud Architecture": level-4/10-capstone-project.md
