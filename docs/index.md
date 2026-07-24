@@ -1,3 +1,8 @@
+---
+title: "Learn Google Cloud (GCP) Free: Beginner to Master Course"
+description: "Free Google Cloud (GCP) course from beginner to advanced -- hands-on cloud lessons with real capstone projects. Part of a 37-course free learning library."
+---
+
 # GCP Mastery Path
 
 A structured, module-wise Google Cloud Platform training program that takes
