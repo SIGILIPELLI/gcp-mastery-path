@@ -15,9 +15,9 @@ config in every module and a hands-on project at the end of each level.
 | Level | Focus | Modules |
 |-------|-------|---------|
 | [Level 1 · Entry](level-1/index.md) | `gcloud` CLI, IAM, Compute Engine, Cloud Storage, networking, Cloud SQL, serverless, monitoring, IaC | 9 topics + 1 capstone |
-| [Level 2 · Intermediate](level-2/index.md) | GKE, autoscaling & load balancing, Cloud DNS, Pub/Sub, Firestore/Bigtable, App Engine, cost management | 9 topics + 1 project |
-| [Level 3 · Advanced](level-3/index.md) | Advanced networking, GKE at depth, Cloud Workflows, advanced IAM, Terraform, CI/CD, security | 9 topics + 1 project |
-| [Level 4 · Master](level-4/index.md) | Architecture framework, data analytics (BigQuery), GKE at scale, multi-project strategy, compliance | 9 topics + 1 capstone |
+| Level 2 · Intermediate (coming soon) | GKE, autoscaling & load balancing, Cloud DNS, Pub/Sub, Firestore/Bigtable, App Engine, cost management | 9 topics + 1 project |
+| Level 3 · Advanced (coming soon) | Advanced networking, GKE at depth, Cloud Workflows, advanced IAM, Terraform, CI/CD, security | 9 topics + 1 project |
+| Level 4 · Master (coming soon) | Architecture framework, data analytics (BigQuery), GKE at scale, multi-project strategy, compliance | 9 topics + 1 capstone |
 
 ## How to use this site
 
