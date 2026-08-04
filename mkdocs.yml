@@ -62,8 +62,19 @@ nav:
       - "08 · Cloud Monitoring & Logging": level-1/08-monitoring-logging.md
       - "09 · Infrastructure as Code (Terraform on GCP)": level-1/09-terraform-intro.md
       - "10 · Capstone Project": level-1/10-capstone-project.md
+  - "Level 2 · Intermediate":
+      - Overview: level-2/index.md
+      - "01 · Containers on GCP (GKE Basics)": level-2/01-gke-containers.md
+      - "02 · Autoscaling & Load Balancing": level-2/02-autoscaling-load-balancing.md
+      - "03 · Cloud DNS & Domains": level-2/03-cloud-dns.md
+      - "04 · Pub/Sub Messaging": level-2/04-pubsub-messaging.md
+      - "05 · Firestore & Bigtable Deep Dive": level-2/05-firestore-bigtable.md
+      - "06 · App Engine": level-2/06-app-engine.md
+      - "07 · Secret Manager & Config": level-2/07-secret-manager.md
+      - "08 · Cloud CDN & Cloud Armor": level-2/08-cloud-cdn-armor.md
+      - "09 · Cost Management & Billing": level-2/09-cost-management-billing.md
+      - "10 · Project — Scalable Web App": level-2/10-project-scalable-web-app.md
 # --- auto-pruned stub levels (see AdSense low-value-content fix) ---
 exclude_docs: |
-  level-2/*.md
   level-3/*.md
   level-4/*.md
