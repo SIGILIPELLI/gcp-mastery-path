@@ -2,98 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/privacy/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/01-setup/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/02-iam-security/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/03-compute-engine/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/04-cloud-storage/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/05-vpc-networking/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/06-cloud-sql/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/07-serverless-run-functions/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/08-monitoring-logging/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/09-terraform-intro/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-1/10-capstone-project/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/01-gke-containers/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/02-autoscaling-load-balancing/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/03-cloud-dns/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/04-pubsub-messaging/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/05-firestore-bigtable/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/06-app-engine/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/07-secret-manager/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/08-cloud-cdn-armor/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/09-cost-management-billing/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
     <url>
          <loc>https://sigilipelli.github.io/gcp-mastery-path/level-2/10-project-scalable-web-app/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-08-25</lastmod>
     </url>
 </urlset>
