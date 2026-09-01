@@ -1,8 +1,8 @@
 site_name: GCP Mastery Path
 site_description: A structured, module-wise Google Cloud Platform training program from entry level to master level, focused on the gcloud CLI, core GCP services, and production cloud architecture.
-site_url: https://sigilipelli.github.io/gcp-skillmastery/
-repo_url: https://github.com/SIGILIPELLI/gcp-skillmastery
-repo_name: gcp-skillmastery
+site_url: https://sigilipelli.github.io/gcp-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/gcp-mastery-path
+repo_name: gcp-mastery-path
 
 theme:
   name: material
