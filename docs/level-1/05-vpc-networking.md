@@ -159,6 +159,24 @@ gcloud compute networks delete app-vpc --quiet
 | `--no-address` (on `instances create`) | Launch a VM with no external IP. |
 | `gcloud compute networks delete` | Delete a VPC (must delete its subnets/rules first). |
 
+## How It Actually Works
+
+A GCP VPC is **global**, not regional — a single VPC's subnets can span
+every region on Earth without any VPN or peering, because the network is
+implemented as a software-defined control plane (Andromeda) that
+programs routing state directly into the hypervisors hosting your VMs,
+rather than routing packets through physical per-region routers the way
+traditional data-center networks do. This is why adding a subnet in a new
+region takes seconds, not a network re-architecture: you're just adding
+an entry to a distributed routing table, not provisioning new hardware.
+Firewall rules work the same way — they're not applied at a perimeter
+device but are evaluated per-VM by the hypervisor itself, per-packet,
+using the highest-priority matching rule (lower priority number wins),
+which is why a single overly broad `deny-all` at priority 1000 will
+silently swallow every intended `allow` rule sitting at priority 1000 or
+lower — priority order, not human-friendly rule position, is what the
+enforcement path actually consults.
+
 ## Exercise
 
 Create a custom-mode VPC with one subnet, a firewall rule allowing internal

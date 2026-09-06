@@ -161,6 +161,26 @@ gcloud dataproc clusters create analytics-cluster \
 | `gcloud dataproc clusters create --max-idle=` | Auto-delete an idle ephemeral Spark cluster. |
 | `gcloud dataproc jobs submit pyspark` | Run a Spark job against a Dataproc cluster. |
 
+## How It Actually Works
+
+BigQuery's speed on multi-terabyte scans comes from two structural
+decisions working together. Storage is **columnar**: each column is
+stored as a separate, independently compressed block, so a query that
+touches 3 of a table's 50 columns physically reads only those 3 columns'
+blocks off disk — this is why `SELECT *` costs dramatically more than
+selecting needed columns, and why BigQuery's byte-scanned pricing model
+directly reflects this columnar I/O, not row count. Execution uses
+**Dremel**, a distributed query engine that compiles your SQL into a
+tree of execution stages and fans each stage out across thousands of
+workers in parallel, with intermediate results shuffled between stages
+over a dedicated high-bandwidth network (Jupiter) rather than written to
+disk between steps — this multi-level tree architecture (not a single
+coordinator distributing to flat workers) is what lets BigQuery return
+aggregate results over petabyte-scale tables in seconds: each level of
+the tree partially aggregates its children's results before passing
+upward, so the final coordinator combines already-mostly-reduced data
+rather than raw rows.
+
 ## Exercise
 
 Design a BigQuery table schema for an events table partitioned by day and

@@ -137,6 +137,24 @@ one-off `gcloud` commands nobody remembers running.
 | `gcloud billing projects link` | Attach a project to a billing account (required for billable resources). |
 | `gcloud billing budgets create --filter-projects=` | Budget alert scoped to a folder's set of projects. |
 
+## How It Actually Works
+
+A multi-project GCP organization structure works because nearly every
+control plane (IAM, quotas, VPC networking, billing) treats "project" as
+its primary isolation and inheritance boundary, not a cosmetic grouping.
+Resource Manager's folder hierarchy is what turns individual projects
+into a manageable tree: an IAM binding or org policy set on a folder
+applies to every project nested beneath it via the same hierarchy-
+walking Checker mechanism from Level 1, which is what makes folder
+structure (by team, by environment, by business unit) a real access-
+control lever rather than organizational labeling. Shared VPC is the
+mechanism that lets many projects share one network without each
+needing its own VPC and its own peering mesh — a host project owns the
+actual subnets, and service projects' VMs draw IPs from those subnets
+directly as if they were native members, avoiding the non-transitive
+peering limitation entirely for the common case of "many projects, one
+network."
+
 ## Exercise
 
 Design a three-folder hierarchy (Production, Non-Production,

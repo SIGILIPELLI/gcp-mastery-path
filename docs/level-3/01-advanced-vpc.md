@@ -129,6 +129,28 @@ misconfigured route leaks.
 | Partner Interconnect | Lower-minimum, provider-mediated on-prem link. |
 | Cloud Router (BGP) | Dynamic route exchange for Interconnect/VPN. |
 
+## How It Actually Works
+
+VPC Peering and Shared VPC solve cross-project connectivity through
+completely different mechanisms. Peering establishes routes between two
+independently-owned VPCs at the network layer — each side must
+explicitly advertise routes to the other, peered networks remain
+separately administered, and (critically) peering is **not transitive**:
+if A peers with B and B peers with C, A cannot reach C, because each
+peering relationship only programs routes for the two direct
+participants. Shared VPC instead has one host project literally own the
+network, and service projects are attached as tenants whose VMs receive
+IPs from the host's subnets directly — there's no peering or routing
+translation because service-project VMs are, from the network's
+perspective, first-class members of the same VPC, which is why Shared
+VPC supports transitive reachability across all attached service
+projects while peering does not. Private Service Connect and Private
+Google Access solve a third, different problem — letting VMs without
+external IPs reach Google APIs or other VPCs' services — by publishing
+an internal endpoint IP that the software-defined network resolves and
+routes to the target service's producer VPC, without ever traversing the
+public internet.
+
 ## Exercise
 
 Create two VPCs in the same project simulating separate teams (`team-a-vpc`,

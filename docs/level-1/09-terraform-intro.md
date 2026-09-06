@@ -190,6 +190,26 @@ in the state file that cause confusing errors on the next `plan`.
 | `resource "google_X" "name" { ... }` | Declare a GCP resource. |
 | `var.name` / `variable "name" {}` | Parameterize a configuration. |
 
+## How It Actually Works
+
+Terraform's core loop is: read your `.tf` config, read the last-known
+**state file** (a JSON snapshot of every resource it manages and its
+real-world attributes), diff the two, and compute a minimal set of
+create/update/destroy API calls to reconcile reality with your config —
+`terraform plan` is literally that diff rendered for review before
+anything executes. The state file matters because Terraform has no other
+way to know a resource it isn't currently looking at still exists;
+without it, every apply would think everything needs to be created from
+scratch. The Google provider translates each resource block into
+authenticated REST calls against the same Compute/Storage/etc. APIs
+`gcloud` uses — there's no special Terraform-only API surface, which is
+why permissions errors during apply are ordinary IAM permission errors on
+whatever identity Terraform is authenticated as. `terraform apply`
+executes changes in dependency order derived from a graph built out of
+resource references (e.g., a subnet referencing a VPC's `self_link`
+forces the VPC to be created first), not the order resources appear in
+the file.
+
 ## Exercise
 
 Write a Terraform configuration that declares a Cloud Storage bucket and a

@@ -163,6 +163,25 @@ workflow SA.
 | `http.default_retry_predicate` | Standard retry-on-5xx/429 policy. |
 | `roles/run.invoker` on the workflow's SA | Required to call a private Cloud Run service. |
 
+## How It Actually Works
+
+Cloud Workflows executes a YAML/JSON-defined state machine where each
+step is checkpointed to durable storage before the next one runs — this
+is what makes workflow execution resilient to the underlying compute
+being recycled mid-run: if the execution engine's worker restarts, it
+resumes from the last checkpointed step rather than replaying the whole
+workflow from scratch, and (unlike a plain script) a long-running `wait`
+or external callback step can pause execution for hours or days without
+holding any compute resource at all — the workflow's state simply sits
+serialized in storage until the triggering event or timer fires. This
+checkpoint-based execution is also why workflow steps calling external
+APIs need explicit retry policies configured rather than relying on
+try/catch semantics from a general-purpose language: a step that fails
+after the call already had a side effect (e.g., a message already
+published) will re-execute that step on retry unless you've made the
+downstream call idempotent, the same at-least-once problem that shows up
+in Pub/Sub.
+
 ## Exercise
 
 Write a workflow with three HTTP steps calling three different Cloud Run

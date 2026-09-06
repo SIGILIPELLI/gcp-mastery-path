@@ -178,6 +178,27 @@ gcloud container clusters resize orders-us --region=us-central1 \
 | Cost Optimization | CUD sized to baseline, mandatory labels, weekly recommender review |
 | Performance Optimization | Partitioned/clustered BigQuery tables, windowed Dataflow aggregation, CDN on the LB |
 
+## How It Actually Works
+
+This capstone's multi-region fleet is a composition of every mechanism
+covered across all four levels operating simultaneously rather than in
+isolation: IAM's hierarchy-walking Checker service authorizes every API
+call your Terraform/CI pipeline makes; Shared VPC and org-policy
+constraints bound what any of those calls are even allowed to
+provision; Network Connectivity Center propagates routes between
+regional VPCs the same way BGP would across physical routers, but as a
+software-defined route-exchange service; each GKE cluster's own
+watch-and-reconcile control loop keeps its workload converging toward
+declared state in its own etcd, independently of every other cluster in
+the fleet, which is why cross-cluster consistency in a fleet has real
+(if small) propagation lag rather than being instantaneous. The
+engineering discipline this project actually tests is the ability to
+reason about how these independent, loosely-coupled control loops (IAM,
+scheduler, autoscaler, NCC route propagation, cross-region replication)
+interact and fail together — most production incidents in real
+multi-region GCP environments are exactly this kind of cross-mechanism
+interaction, not a single service behaving incorrectly on its own.
+
 ## Cleanup
 
 Tear down in reverse order: game-day validation stops, Dataflow job

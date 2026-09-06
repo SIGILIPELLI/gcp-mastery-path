@@ -154,6 +154,27 @@ mechanism your org uses rather than assuming org policy alone covers it.
 | `--labels=team=,env=,cost-center=` | Enable per-team/per-env cost attribution via billing export. |
 | Billing export to BigQuery | Turn cost analysis into a repeatable SQL query. |
 
+## How It Actually Works
+
+Cost optimization at fleet scale relies on the same rated-usage pipeline
+covered in Level 2, but the levers that matter change once volume is
+large enough for discount structures to dominate simple resource
+right-sizing. Committed Use Discounts are a **forward-looking rate
+commitment** — you commit to a baseline spend level and GCP applies a
+discounted rate to usage up to that commitment automatically, with no
+change to how resources actually run, which is why CUD planning is
+fundamentally a usage-forecasting exercise rather than an engineering
+one. BigQuery flat-rate/editions pricing flips the billing model
+entirely: instead of paying per byte scanned, you reserve query
+processing capacity (slots) at a fixed price, which only pays off once
+your organization's aggregate on-demand query cost would exceed the
+reservation cost — the crossover point is a real number computable from
+historical billing export data, not a rule of thumb. Recommender's
+machine-generated rightsizing suggestions work by analyzing actual
+utilization telemetry (the same Cloud Monitoring time series from Level
+1) against provisioned capacity, surfacing a specific alternate machine
+type only when sustained utilization data supports it.
+
 ## Exercise
 
 Given a hypothetical fleet with a well-established usage floor, write the

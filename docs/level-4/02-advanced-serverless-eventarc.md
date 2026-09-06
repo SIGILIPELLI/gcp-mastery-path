@@ -133,6 +133,24 @@ resource's generation number, not just "did this run."
 | `--enable-message-ordering` + `--dead-letter-topic` | Add ordering guarantees and a failure backstop via Pub/Sub. |
 | Idempotency key by event ID/generation | Required because delivery is at-least-once. |
 
+## How It Actually Works
+
+Eventarc is a routing layer built on top of Pub/Sub and Cloud Audit
+Logs — nearly every "direct" GCP resource event you can trigger on (a
+new GCS object, a Firestore write, a Compute Engine state change) is
+actually surfaced first as an Audit Log entry, which Eventarc's
+background pipeline converts into a CloudEvents-formatted Pub/Sub
+message and delivers to your Cloud Run service or Cloud Function. This
+is why Eventarc trigger delivery inherits Pub/Sub's at-least-once
+semantics exactly: your event handler can receive the same event twice
+and must be idempotent, for identical reasons to any Pub/Sub subscriber.
+The CloudEvents envelope format Eventarc standardizes on (source, type,
+id, time, data) is what lets the same trigger/handler pattern work
+uniformly whether the underlying event came from a GCP audit log, a
+custom Pub/Sub topic, or a third-party source registered through
+Eventarc's provider model — your handler code never needs to know which
+raw API produced the event, only the CloudEvents shape it arrives in.
+
 ## Exercise
 
 Design an Eventarc trigger that fires a Cloud Run service whenever a new

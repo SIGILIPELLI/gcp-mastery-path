@@ -198,6 +198,27 @@ gcloud pubsub topics delete orders-dlq
 | `gcloud pubsub subscriptions update --dead-letter-topic=` | Route repeatedly-failed messages to a DLQ. |
 | `gcloud pubsub subscriptions create --enable-message-ordering` | Guarantee per-ordering-key delivery order. |
 
+## How It Actually Works
+
+Pub/Sub's core guarantee is **at-least-once delivery**, and understanding
+why requires seeing the ack mechanism underneath: when a subscriber pulls
+a message, Pub/Sub marks it "outstanding" and starts an ack-deadline
+timer (default 10s, extendable) rather than deleting it; only an explicit
+ack from the subscriber removes it from the outstanding set. If the
+deadline expires with no ack — because the subscriber crashed, the
+network dropped the ack, or processing simply took too long — Pub/Sub
+assumes delivery failed and redelivers the message, potentially to a
+different subscriber instance. This is structurally why duplicates are
+possible even when nothing "goes wrong": an ack can be sent successfully
+by the client but lost in transit back to Pub/Sub, and Pub/Sub, having
+never received it, redelivers a message that was actually already
+processed — which is exactly why consumers must be idempotent rather
+than trusting exactly-once semantics. Under the hood, each topic
+replicates published messages across multiple zones before acking the
+publisher, and subscriptions maintain independent delivery cursors per
+topic, so multiple subscriptions on one topic each get every message
+without competing for it.
+
 ## Exercise
 
 Create a topic with two subscriptions: one plain pull subscription and one

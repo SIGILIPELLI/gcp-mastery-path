@@ -211,6 +211,24 @@ list`.
 | `kubectl rollout status` / `rollout undo` | Watch or reverse a rollout. |
 | `gcloud container clusters delete` | Tear down the cluster (control plane + nodes). |
 
+## How It Actually Works
+
+A GKE cluster's control plane runs the **etcd** key-value store as the
+single source of truth for cluster state — every object you `kubectl
+apply` (Pods, Deployments, Services) is just a record written to etcd,
+and the various controllers (scheduler, kube-controller-manager) are
+independent loops that watch etcd for changes and reconcile the world
+toward the declared state. The **scheduler** doesn't place your Pod
+immediately on `kubectl apply`; it watches for unscheduled Pods, scores
+every node against the Pod's CPU/memory requests and constraints, and
+writes the winning node's name back into the Pod spec — only then does
+the kubelet on that node actually pull the image and start the
+container. This decoupled watch-and-reconcile model is why a Deployment
+self-heals: if a Pod dies, the ReplicaSet controller's next reconcile
+pass notices the actual replica count no longer matches the desired
+count in etcd and creates a replacement — nothing "detects a crash"
+directly, it detects state drift.
+
 ## Exercise
 
 Create an Autopilot cluster, deploy the `hello-app` Deployment and

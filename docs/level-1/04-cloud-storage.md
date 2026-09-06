@@ -164,6 +164,25 @@ gcloud storage buckets delete gs://gcp-mastery-path-123-backups --quiet
 | `gcloud storage buckets update --web-main-page-suffix=` | Enable static website hosting on a bucket. |
 | `gcloud storage buckets delete` | Permanently delete an (empty) bucket. |
 
+## How It Actually Works
+
+Cloud Storage is not a filesystem — "folders" in the console are a UI
+fiction layered over a flat namespace where every object's real identity
+is its full key string (`images/2024/photo.jpg` is one key, not nested
+directories). Objects are immutable: there is no in-place byte edit, only
+whole-object PUT/replace, which is what makes GCS's **strong global
+consistency** achievable — every operation (read-after-write,
+read-after-update, read-after-delete, and list) is immediately consistent
+worldwide, because a write publishes a completely new object version
+rather than mutating shared state that other regions could observe
+mid-change. Under the hood, each object is erasure-coded and replicated
+across multiple failure domains at write time before the PUT acknowledges
+success, which is also why storage classes (Standard/Nearline/Coldline/
+Archive) differ only in retrieval latency and minimum-storage-duration
+economics, not in durability — all classes carry the same eleven-nines
+annual durability target because the redundancy scheme is identical
+underneath.
+
 ## Exercise
 
 Create a bucket, upload a small `index.html` you write yourself, make the

@@ -146,6 +146,27 @@ dependency was refactored.
 | `kubectl run ... stress` + `ResourceQuota` | Validate resource isolation actually holds under load. |
 | Scheduled game days | Keep chaos testing a recurring practice, not a one-off. |
 
+## How It Actually Works
+
+Chaos engineering on GCP works by deliberately triggering the same
+failure-detection and reconciliation mechanisms you've relied on all
+along, under controlled conditions, to verify they actually fire as
+designed. Killing a GKE node tests whether the Deployment controller's
+reconcile loop (Level 2) actually notices the resulting Pod-count drift
+and recreates Pods on healthy nodes within your expected time budget —
+if a PodDisruptionBudget or resource quota silently prevents that
+recreation, chaos testing surfaces it before a real outage does.
+Simulating a regional Cloud SQL failure tests whether your failover
+actually completes within your claimed RTO, because the HA mechanism
+(Level 1: standby promotion via WAL replication) has real completion
+latency that varies with replication lag at the moment of failure —
+something you can only measure by actually failing it over, not by
+reading the documented target. This is the core justification for
+chaos engineering as a practice: architectural guarantees (multi-zone,
+HA, autoscaling) are claims about mechanisms, and the only way to verify
+a mechanism's actual behavior under failure is to trigger the failure
+and observe the mechanism's response directly.
+
 ## Exercise
 
 Define a steady-state hypothesis for a sample service (specific latency

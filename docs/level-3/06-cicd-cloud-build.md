@@ -154,6 +154,24 @@ pipeline: yes/no."
 | `gcloud artifacts repositories create` | Create a regional image/package repo. |
 | `--require-approval` / `gcloud builds approve` | Manual gate before a pipeline proceeds. |
 
+## How It Actually Works
+
+Cloud Build executes your pipeline as a sequence of Docker containers
+run one after another on a build VM that Google provisions on demand and
+tears down when the build finishes — you're billed only for build-minutes
+actually consumed, and each step's container shares a single `/workspace`
+volume, which is the *only* thing steps share; environment variables and
+in-memory state from one step don't carry to the next, only files written
+to `/workspace` do. This container-per-step model is why a Cloud Build
+step can run literally any tool with a public image (Terraform, kubectl,
+a custom linter) without Google needing to bake support for every tool
+into the platform. Build triggers work by registering a webhook with your
+source repository (GitHub, Cloud Source Repositories) — a push event
+posts to Cloud Build's endpoint, which matches the event against your
+trigger's branch/tag filter and, on a match, starts a build using the
+`cloudbuild.yaml` at the commit's exact revision, which is why in-flight
+builds are unaffected by a subsequent push to the same branch.
+
 ## Exercise
 
 Write a `cloudbuild.yaml` that builds an image, pushes it to a new Artifact

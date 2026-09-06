@@ -252,6 +252,24 @@ continues — don't stop at step 3 without verifying with step 4.
 | `gcloud storage buckets delete` | Tear down the frontend bucket (must be empty first). |
 | `gcloud sql instances list` / `gcloud run services list` | Verify teardown left nothing running. |
 
+## How It Actually Works
+
+Stitching VPC, Compute Engine, Cloud SQL, and IAM together in one project
+exposes the layering you've been building module by module: the VPC's
+private subnet range and firewall rules are enforced by the hypervisor
+per-packet before a request ever reaches your VM's kernel; the VM's
+service account (not your personal identity) is what Cloud SQL's IAM
+authentication actually checks when the app connects via the Cloud SQL
+Auth Proxy, which works by opening a local Unix socket or TCP port and
+tunnelling traffic through an encrypted, IAM-authorized connection to the
+instance's private IP — your application code never needs the database
+password or a public IP path. When you tear the stack down, dependency
+order matters for the same reason Terraform computes a graph: Cloud SQL
+must be deleted before the VPC it's peered into, and firewall rules
+attached to the network must go before the network itself, because each
+resource's existence is a precondition the next one's API call checks at
+delete time, not just at create time.
+
 ## Exercise
 
 Extend the notes app with a `DELETE /api/notes/<id>` endpoint and a delete

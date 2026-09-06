@@ -148,6 +148,26 @@ exists in the registry" for "it passed policy."
 | `perimeters dry-run enforce` | Test a perimeter's impact before enforcing it. |
 | `gcloud container binauthz policy import` | Require signed/attested images at deploy time. |
 
+## How It Actually Works
+
+VPC Service Controls and Binary Authorization enforce security at two
+different points in a resource's lifecycle. VPC Service Controls draws a
+**service perimeter** around a set of projects and blocks API-level data
+exfiltration by intercepting calls to protected services (BigQuery, GCS,
+etc.) and checking whether both the caller's identity *and* the network
+path it originated from are inside the perimeter — this is why VPC-SC
+can stop a compromised, fully-IAM-authorized service account from
+copying data to an external project: the perimeter check happens
+independently of and in addition to the IAM Checker's normal allow
+decision. Binary Authorization enforces at **deploy time** instead: it
+requires container images pushed to GKE or Cloud Run to carry a
+cryptographic attestation signed by a trusted authority (proving, say,
+that the image passed a vulnerability scan or a specific CI pipeline),
+and the admission controller rejects deployment of any image lacking a
+valid signature — this only works because container image digests are
+content-addressed (a SHA256 hash of the image content), so a signature
+over the digest can't be replayed against a different, tampered image.
+
 ## Exercise
 
 Design (command sequence, no live resources needed) a VPC Service Controls

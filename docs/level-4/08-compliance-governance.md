@@ -139,6 +139,27 @@ retrofitting CMEK onto an existing bucket.
 | `gcloud org-policies set-policy gcp.resourceLocations` | Enforce data residency at org/folder scope. |
 | `gsutil rewrite -k -r` | Re-encrypt existing objects after retrofitting CMEK. |
 
+## How It Actually Works
+
+Compliance controls in GCP largely reduce to two enforcement
+mechanisms you've already seen doing other jobs. Data residency and
+sovereignty requirements are enforced through the
+`gcp.resourceLocations` organization policy constraint from Level 3 —
+it's checked at resource-creation time by the same policy-evaluation
+layer that blocks any other constraint violation, which is why a
+resource that violates a residency constraint fails to even provision
+rather than being created and later flagged. Audit and evidence
+requirements lean entirely on Cloud Audit Logs' immutable, append-only
+log stream: Admin Activity logs are captured automatically for every
+API call regardless of IAM permission level (even an Owner's actions are
+logged) and cannot be disabled, which is what makes them usable as
+compliance evidence — a control that could be silently turned off by
+the party being audited wouldn't satisfy most frameworks' requirements
+in the first place. Access Transparency extends this further by logging
+*Google's own personnel* accessing your data during support
+interactions, using the same underlying audit-log infrastructure but
+sourced from Google-internal access rather than your own API calls.
+
 ## Exercise
 
 Write the command to create an Assured Workloads folder for a hypothetical

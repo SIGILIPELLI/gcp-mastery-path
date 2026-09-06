@@ -117,6 +117,25 @@ level covers folder/project structuring in depth.
 | `gcloud resource-manager folders create` | Build landing-zone folder structure under an org. |
 | Five pillars (Ops, Security, Reliability, Cost, Performance) | The lens for every architecture review. |
 
+## How It Actually Works
+
+The Well-Architected Framework's five pillars aren't independent
+checklists — they're competing forces that architecture decisions
+actually trade off against each other in the underlying infrastructure.
+Adding redundancy for reliability (multi-zone, multi-region deployment)
+mechanically increases cost (more running resources) and often
+operational complexity (more failure modes to reason about, more
+replication lag to manage), which is why a well-architected system
+explicitly documents *which* pillar it's optimizing for a given
+component rather than trying to maximize all five simultaneously.
+Performance efficiency and cost optimization intersect at the resource-
+sizing level in a very literal way: GCP bills machine types and disk
+tiers on fixed pricing, so the "efficient" configuration is the smallest
+resource that meets your latency SLA, discoverable only by load-testing
+against real traffic patterns — architectural review at this level is
+fundamentally an exercise in reading utilization metrics against SLA
+targets, not applying abstract principles.
+
 ## Exercise
 
 Take the multi-tier CI/CD project from Level 3 Module 10 and score it

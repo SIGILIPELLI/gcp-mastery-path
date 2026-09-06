@@ -225,6 +225,26 @@ gcloud compute backend-services update web-backend --global --no-enable-cdn
 | `evaluatePreconfiguredExpr('sqli-stable')` | Use Google's built-in WAF rule sets in an expression. |
 | `gcloud compute backend-services update --security-policy=` | Attach a Cloud Armor policy to a backend. |
 
+## How It Actually Works
+
+Cloud CDN caches responses at Google's edge points of presence keyed by
+the full request (URL, and optionally headers/cookies you configure into
+the cache key), and a cache **hit** is served entirely from the edge
+node's memory/SSD without the request ever reaching your origin backend —
+this is why cache-key configuration matters so much: including an
+unnecessary header (like a session cookie) in the key fragments your
+cache into near-unique entries and silently defeats caching almost
+entirely. Cache invalidation is not a delete-and-refetch operation but a
+tombstone: `gcloud compute url-maps invalidate-cdn-cache` marks matching
+cached entries stale across every edge node, forcing the next request for
+each to revalidate against origin. Cloud Armor sits in front of this at
+the GFE layer and evaluates security policies **before** a request is
+even proxied toward your backend or the CDN cache — each rule is checked
+in priority order (lowest number first) against the request's IP, headers,
+and (for WAF rules) a pattern-matching engine tuned against known attack
+signatures like SQL injection and XSS payloads, and the first matching
+rule's action (allow/deny/rate-limit) short-circuits evaluation.
+
 ## Exercise
 
 Enable CDN on the load balancer from Module 02 with `CACHE_ALL_STATIC`, `curl`

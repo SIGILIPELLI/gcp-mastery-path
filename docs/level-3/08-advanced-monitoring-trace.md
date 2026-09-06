@@ -139,6 +139,25 @@ broken.
 | `gcloud monitoring services create` + `slo create` | Define an SLO and track error-budget burn. |
 | Alert on burn *rate*, not raw threshold | Reduces noisy paging on brief blips. |
 
+## How It Actually Works
+
+Cloud Trace and Cloud Profiler instrument two different axes of the same
+running system. Trace captures **distributed spans**: each request
+carries a trace context (a trace ID plus parent span ID) propagated via
+HTTP headers across every service hop, and each service reports its own
+span's start/end timestamps back to Cloud Trace independently — the
+full waterfall view you see is reconstructed *after the fact* by
+grouping every span that shares a trace ID, not built live by a single
+coordinating process, which is why missing propagation headers in one
+hop silently breaks the trace into two disconnected fragments rather
+than raising an error. Cloud Profiler instead works by periodically
+interrupting your running process (statistical sampling, typically tens
+of times per second) and recording the current call stack, aggregating
+thousands of these samples over minutes into a proportional picture of
+where CPU/memory time is actually spent — this sampling approach is what
+keeps profiler overhead low enough to run continuously in production,
+unlike full instrumentation-based profiling which would slow every call.
+
 ## Exercise
 
 Instrument a sample Cloud Run service with OpenTelemetry tracing across two

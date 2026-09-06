@@ -176,6 +176,26 @@ gcloud run services delete hello-run --region=us-central1 --quiet
 | `gcloud run services describe --format='value(status.url)'` | Get a service's public URL. |
 | `gcloud functions delete` / `gcloud run services delete` | Tear down. |
 
+## How It Actually Works
+
+Cloud Run and Cloud Functions both bill by **actual CPU/memory time
+consumed while handling a request**, which only makes sense once you see
+what happens between requests: when no traffic arrives, the platform
+scales your container down to zero instances and reclaims the compute
+entirely — there's no idle VM burning money. The first request after a
+scale-to-zero period pays a **cold start**: the platform must pull your
+container image (or, for Cloud Functions, build/mount it), start the
+process, and run it through its bootstrap before it can accept the
+request, which is why cold-start latency correlates directly with image
+size and language runtime init cost. Once running, an instance can serve
+many concurrent requests inside the same container (Cloud Run's
+`--concurrency` flag controls this) because the platform is really
+managing a thin scheduling and routing layer over ordinary Linux
+containers, multiplexing requests the same way a normal web server would
+multiplex threads — the "serverless" abstraction is entirely about who
+manages the placement decision, not a fundamentally different execution
+model.
+
 ## Exercise
 
 Deploy an HTTP Cloud Function that returns the current server time as JSON.

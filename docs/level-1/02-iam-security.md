@@ -132,6 +132,25 @@ gcloud iam roles describe roles/storage.objectViewer --format="value(includedPer
 | `gcloud iam service-accounts keys create` | Generate a key file for a service account (use sparingly). |
 | `gcloud iam service-accounts keys delete` | Revoke a service account key. |
 
+## How It Actually Works
+
+Every IAM check GCP performs evaluates the same abstraction: a **policy**
+is a list of bindings, each pairing a role (a bundle of permissions) with
+a set of members, attached to a resource. Resources form a hierarchy —
+Organization → Folder → Project → individual resource — and policies are
+**additive down the tree**: a role granted at the Organization node is
+inherited by every folder, project, and resource beneath it, and there is
+no way to revoke an inherited grant lower down (only Deny policies, a
+separate mechanism, can override an inherited Allow). This is why the
+"who can do what" question is really a union: `gcloud projects
+get-iam-policy` only shows bindings set *at that node*, not the inherited
+ones from folders/org above it, which is the single most common cause of
+"but I never granted that role" surprises. Under the hood, every API call
+hits a common **Checker service** that walks the resource hierarchy
+upward, unions every applicable binding at every ancestor node, and grants
+access if the union contains the requested permission anywhere in the
+chain — deterministic, but hierarchy-wide, not resource-local.
+
 ## Exercise
 
 Create a service account named `reporting-bot`. Grant it

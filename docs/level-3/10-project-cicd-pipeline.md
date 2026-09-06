@@ -178,6 +178,25 @@ someone manually opening a firewall rule during an incident and forgetting
 to close it — surfaces automatically rather than at the next quarterly
 audit.
 
+## How It Actually Works
+
+A full CI/CD pipeline chaining Cloud Build, Artifact Registry, and GKE
+deploys relies on **image immutability** as its correctness anchor: once
+Cloud Build pushes an image tagged with a content digest to Artifact
+Registry, that digest can never point to different bytes — a Kubernetes
+Deployment referencing an image by digest (rather than a mutable tag like
+`:latest`) is guaranteed to run byte-identical code across every replica
+and every future rollout, which is what makes rollbacks reliable: rolling
+back means pointing the Deployment spec at a previous digest, not hoping
+a `:latest` tag hasn't been overwritten since. The canary/health-gated
+promotion step works through the same reconciliation loop as any kubectl
+apply: updating the Deployment's pod template triggers the Deployment
+controller to create a new ReplicaSet and scale it up while scaling the
+old one down according to the configured rolling-update strategy,
+pausing the rollout automatically if new Pods fail their readiness
+probe — the built-in mechanism that prevents a broken image from fully
+replacing a working one before your gate even evaluates.
+
 ## Cleanup
 
 Tear down in reverse-dependency order: workflow, Cloud Build trigger, GKE

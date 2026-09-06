@@ -188,6 +188,23 @@ node-hours across a large fleet.
 | `gcloud container fleet config-management apply` | GitOps-sync manifests across a cluster fleet. |
 | `--autoscaling-profile=optimize-utilization` | Trade scheduling latency for higher bin-packing efficiency. |
 
+## How It Actually Works
+
+Running GKE at scale exposes control-plane limits that don't matter in a
+small cluster. etcd (the cluster's state store) has practical size and
+write-throughput ceilings, so GKE's control plane scaling in Autopilot
+and large clusters relies on watch-request batching and sharded API
+server instances to keep every controller's watch stream from
+overwhelming a single etcd leader — this is the underlying reason GKE
+imposes node-count and object-count guidance rather than allowing
+unlimited resources. Multi-cluster and fleet management (via GKE Hub)
+work by having each member cluster's control plane independently
+register its state with a central fleet service, rather than one
+cluster's API server actually controlling another — this is why
+multi-cluster Services and config sync propagate on their own reconcile
+loops with real (if usually sub-second) lag, rather than being instantly
+consistent across clusters the way a single cluster's own objects are.
+
 ## Exercise
 
 Design a two-team shared cluster: two namespaces, a `ResourceQuota` per

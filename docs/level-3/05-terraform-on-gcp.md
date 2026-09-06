@@ -167,6 +167,26 @@ the resource.
 | `terraform workspace new/select` | Separate state per environment within one backend. |
 | `terraform import RESOURCE ID` | Bring an existing GCP resource under Terraform management. |
 
+## How It Actually Works
+
+Terraform modules and remote state work together to solve the two
+problems that break Terraform at team scale. A **module** is just a
+named, reusable graph of resources — calling a module doesn't change how
+Terraform builds its dependency graph; it inlines the module's resources
+into the same graph with a namespaced address, which is why a module
+output referenced by the root config still creates a normal dependency
+edge that determines create/destroy ordering. **Remote state** (a GCS
+backend, typically) solves the problem of concurrent applies corrupting
+the state file: GCS's object generation numbers back a native locking
+mechanism — Terraform writes a lock object before an apply and checks the
+generation hasn't changed since it read state, so two people running
+`apply` simultaneously get a hard lock-conflict error rather than a
+silently corrupted state file with lost resource records. Workspaces
+extend this by namespacing the *same* config against multiple state
+files (one per environment), which is why switching workspaces changes
+what Terraform thinks currently exists without changing a single line of
+your `.tf` files.
+
 ## Exercise
 
 Create a GCS backend bucket with versioning, wire a `backend "gcs"` block

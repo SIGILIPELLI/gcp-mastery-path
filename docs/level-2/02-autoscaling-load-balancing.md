@@ -217,6 +217,26 @@ gcloud compute firewall-rules delete allow-health-checks --quiet
 | `gcloud compute forwarding-rules create --global` | Bind a public IP + port to the proxy. |
 | `gcloud compute backend-services get-health` | Check per-instance health as seen by the LB. |
 
+## How It Actually Works
+
+A Google Cloud external HTTP(S) load balancer is not one machine — it's
+a globally distributed proxy layer (Google Front End, or GFE) running at
+edge points of presence worldwide, which is why a single anycast IP
+address can serve requests routed to the nearest healthy backend without
+DNS-based geo-routing tricks. The Horizontal Pod Autoscaler and Managed
+Instance Group autoscaler both work on the same principle underneath:
+they poll a metric (CPU utilization, custom metric, or request count)
+on a fixed interval, compare it against your target, and compute
+`desiredReplicas = currentReplicas × (currentMetric / targetMetric)`,
+then round and clamp to your min/max — this is why autoscaling reacts in
+discrete steps, not smoothly, and why setting an unrealistically low
+target causes oscillation (thrashing) as it repeatedly overshoots and
+undershoots. Health checks are what let the load balancer safely route
+around a newly-added-but-not-yet-ready instance: the LB actively polls
+each backend's health endpoint on its own schedule and only adds an
+instance to the serving rotation once it's passed the configured number
+of consecutive successful checks.
+
 ## Exercise
 
 Build the full chain above, confirm `curl` against the reserved IP round-robins

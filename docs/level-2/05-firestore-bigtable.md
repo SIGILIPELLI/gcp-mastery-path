@@ -223,6 +223,26 @@ documents (or the whole GCP project) is the practical cleanup path.
 | `cbt createtable` / `createfamily` | Create a table and column family. |
 | `cbt set` / `read` | Write/read rows via the Bigtable-specific CLI. |
 
+## How It Actually Works
+
+Firestore and Bigtable sit at opposite ends of the same underlying idea —
+distributing rows across many servers by key range — but solve very
+different consistency problems. Firestore layers a **document/collection
+model with real-time listeners** on top of a globally replicated,
+strongly consistent backend: when a client subscribes to a query, the
+server keeps a live watch and pushes only the *diff* (added/modified/
+removed documents) whenever a write changes the result set, which is why
+Firestore listeners feel instantaneous but scale poorly past a few
+thousand concurrent listeners on the same query — each write potentially
+fans out to every listener watching a matching query. Bigtable instead
+optimizes for raw throughput over a single **flat, sorted key space**:
+rows are physically stored in row-key order and split into contiguous
+key-range shards (tablets) as data grows, so query performance is
+entirely a function of row-key design — sequential keys (like a
+timestamp prefix) create write hotspots because all new writes land on
+the same tablet, while a well-distributed key (like a hashed prefix)
+spreads writes evenly across tablets and nodes.
+
 ## Exercise
 
 Create a Firestore Native database, then (using the Firestore emulator or

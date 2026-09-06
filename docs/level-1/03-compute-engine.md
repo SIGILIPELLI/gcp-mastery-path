@@ -158,6 +158,26 @@ gcloud compute firewall-rules delete allow-ssh allow-http --quiet
 | `gcloud compute firewall-rules list` | List firewall rules on a network. |
 | `--metadata=startup-script=...` | Run a script automatically on first boot. |
 
+## How It Actually Works
+
+A Compute Engine VM is not a dedicated physical machine — it's a set of
+resource guarantees (vCPU, memory, disk) scheduled onto one of Google's
+physical hosts by the Borg-descended cluster scheduler, with your virtual
+disks served over the network from Persistent Disk storage rather than
+local spinning rust. This separation is what makes **live migration**
+possible: when Google needs to patch or retire the underlying host,
+it transparently copies your VM's memory pages to a new host while it
+keeps running, does a final brief pause to sync the last dirty pages, then
+resumes execution on the new host — no reboot, no IP change, because the
+network identity and attached disks never moved, only the compute
+context did. This only works for standard VMs; GPU-attached and certain
+sole-tenant configurations instead get a maintenance-window notification
+because migrating GPU state isn't supported. Machine types are similarly
+decoupled from hardware: changing a VM's machine type is a metadata
+update plus a stop/start cycle, not a physical swap, because the
+scheduler simply re-places the same disk-backed VM onto a host with the
+newly requested shape.
+
 ## Exercise
 
 Create an `e2-micro` VM in `us-central1-a` tagged `http-server`, with a

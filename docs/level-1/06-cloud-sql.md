@@ -133,6 +133,24 @@ automated backups — export anything you need to keep first with
 | `gcloud sql backups create/list/restore` | Manage on-demand and automated backups. |
 | `gcloud sql instances delete` | Permanently delete an instance and its data. |
 
+## How It Actually Works
+
+Cloud SQL runs an unmodified MySQL/PostgreSQL/SQL Server binary on a
+Compute Engine-managed VM, but Google's control plane wraps it with
+network-attached Persistent Disk (not local disk) precisely so failover
+can happen without physically moving data. In a high-availability
+configuration, the standby replica in a different zone applies the
+primary's write-ahead log (WAL) in near-real-time via synchronous or
+semi-synchronous replication over the region's internal network; on
+primary failure, the control plane detects the missed heartbeat, promotes
+the standby, and repoints the same regional IP address to it — clients
+reconnect to the identical endpoint without a config change. Automated
+backups exploit the same WAL stream: a base snapshot plus continuously
+archived transaction logs allow point-in-time recovery to any second
+within the retention window, because Cloud SQL literally replays the
+log forward from the nearest snapshot rather than storing a full backup
+per moment in time.
+
 ## Exercise
 
 Create a `db-f1-micro` PostgreSQL instance, a database called `appdb`, and a

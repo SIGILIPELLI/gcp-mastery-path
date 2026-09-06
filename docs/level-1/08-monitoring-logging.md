@@ -158,6 +158,26 @@ gcloud logging metrics delete checkout-errors --quiet
 | `gcloud monitoring uptime create` | Add an external uptime check for a URL. |
 | `severity>=ERROR` | Log filter fragment for errors and above. |
 
+## How It Actually Works
+
+Every GCP service writes structured log entries as JSON payloads to a
+common ingestion pipeline (Cloud Logging), which indexes them by
+resource type, timestamp, and severity into per-project log buckets —
+this is why a Logs Explorer query like `resource.type="gce_instance"
+severity>=ERROR` is fast even across millions of entries: it's filtering
+an indexed store, not grepping raw text. Cloud Monitoring works
+differently underneath: it's a **time-series database** where every
+metric is a (metric type, resource labels, timestamp, value) tuple
+collected on a fixed interval (usually 60s) via lightweight agents or
+direct API writes; alerting policies periodically evaluate a query
+against the most recent window of that time series and open an incident
+the moment the condition holds for the configured duration — not
+instantly on a single breach, specifically to absorb single-sample noise.
+Log-based metrics bridge the two systems: GCP counts matching log entries
+in real time and re-exposes that count as a synthetic time series, so a
+spike in "ERROR" log lines becomes something an alerting policy can
+threshold on without you writing custom instrumentation.
+
 ## Exercise
 
 Redeploy the Cloud Run service from the previous module, generate a handful

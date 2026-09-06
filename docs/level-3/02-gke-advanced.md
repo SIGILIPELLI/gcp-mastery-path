@@ -144,6 +144,26 @@ list` if a cluster seems to be ignored.
 | `gcloud container clusters update --enable-autoscaling` | Configure cluster (node) autoscaling. |
 | `gcloud container fleet memberships register` | Join a cluster to a fleet for multi-cluster features. |
 
+## How It Actually Works
+
+GKE's more advanced scheduling primitives all extend the same
+watch-and-reconcile loop from basic Kubernetes. A **PodDisruptionBudget**
+doesn't prevent Pods from being deleted directly — it's consulted by the
+Eviction API that voluntary disruptions (node drains, cluster
+autoscaler scale-downs) must go through, so a PDB has zero effect on
+involuntary disruptions like a node crashing outright. Node auto-
+provisioning and cluster autoscaling both work from the same signal —
+unschedulable Pods sitting in the scheduler's pending queue because no
+node has room — but autoscaling adds capacity within existing node
+pools' machine-type constraints, while node auto-provisioning can create
+an entirely new node pool with a machine type it computes from the
+pending Pods' resource requests. Workload Identity replaces the older
+node-service-account model by letting a Kubernetes ServiceAccount
+impersonate a Google service account through a short-lived token
+exchange brokered by GKE's metadata server proxy, which is what removes
+the need to mount a downloadable service account key into every Pod that
+needs Google API access.
+
 ## Exercise
 
 Create a Standard-mode cluster with a default pool and a tainted Spot pool.

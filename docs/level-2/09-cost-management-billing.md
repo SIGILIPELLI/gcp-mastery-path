@@ -211,6 +211,25 @@ gcloud pubsub topics delete budget-alerts
 | `bq mk --dataset` | Create the BigQuery dataset billing export writes into. |
 | `gcloud recommender recommendations list` | Get machine-generated cost/right-sizing suggestions. |
 
+## How It Actually Works
+
+GCP's billing pipeline aggregates **usage**, not cost, in near-real time —
+every resource emits usage records (vCPU-seconds, GB-months, API calls)
+that are rated against SKU pricing and rolled up into a cost export
+roughly every few hours, which is why the console's "current spend"
+figure is always an estimate lagging true usage rather than a live
+meter. Budgets and alerts work off this same rated-usage stream: a budget
+alert threshold doesn't stop spending by itself — it triggers a
+notification (and optionally a Pub/Sub message you can wire to a Cloud
+Function that actually disables billing or shuts down resources), which
+is why "set a budget" alone never prevents an overspend, only informs of
+one. Committed Use Discounts and Sustained Use Discounts work on
+opposite mechanisms: committed use is a contractual pre-commitment
+applied automatically as a rate discount on qualifying usage regardless
+of how much you actually run, while sustained use discounts are
+calculated retroactively based on the fraction of the billing month a
+given resource class actually ran, with no upfront commitment required.
+
 ## Exercise
 
 Create a $10 budget with 50%/90%/100% thresholds on your billing account,

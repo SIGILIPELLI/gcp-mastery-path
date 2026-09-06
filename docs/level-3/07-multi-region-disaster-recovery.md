@@ -149,6 +149,26 @@ quota ceiling mid-incident turns a regional outage into a total outage.
 | `gcloud compute backend-services get-health` | Check per-backend health across regions. |
 | Game-day: `remove-backend` then re-add | Rehearse failover without a real outage. |
 
+## How It Actually Works
+
+Multi-region resilience design comes down to which of two failure
+domains a given GCP service protects against by default. Some services
+(Cloud Storage multi-region buckets, Spanner multi-region instances) are
+**synchronously** replicated across regions as part of every write, so a
+regional outage causes zero data loss because no write ever acknowledged
+success without already being durable in multiple regions — this is
+also why multi-region Spanner writes have higher latency than a
+single-region deployment: every commit must reach quorum across
+geographically distant replicas before acknowledging. Others (regional
+Cloud SQL, most Compute Engine setups) replicate **asynchronously** at
+best or not at all across regions, meaning a DR strategy for them is an
+explicit engineering exercise — cross-region read replicas, or
+scheduled cross-region backup exports — where your Recovery Point
+Objective is fundamentally bounded by replication lag, not by
+architecture alone. Understanding which category a service falls into is
+the actual design decision; "multi-region" is not a single guarantee
+level across GCP's catalog.
+
 ## Exercise
 
 Provision (or plan on paper, given no real credentials) a Cloud SQL

@@ -178,6 +178,27 @@ gcloud services enable \
 | `gcloud services enable <api>` | Turn on a GCP API for the current project. |
 | `gcloud services list --enabled` | List APIs enabled on the current project. |
 
+## How It Actually Works
+
+`gcloud auth login` doesn't store your password anywhere — it runs an OAuth
+2.0 authorization-code flow: the CLI opens a browser to Google's consent
+screen, receives a short-lived authorization code on a local redirect URI,
+then exchanges that code for an access token and a long-lived refresh
+token, which land in `~/.config/gcloud/credentials.db` (SQLite). Every
+subsequent `gcloud`/API call presents the access token; when it expires
+(~1 hour) the SDK silently uses the refresh token to mint a new one — you
+never re-enter credentials. `gcloud auth application-default login` writes
+a *separate* credential file that client libraries (not the CLI) read via
+Application Default Credentials — the SDK checks, in order, the
+`GOOGLE_APPLICATION_CREDENTIALS` env var, this ADC file, then the
+attached service account's metadata-server token, which is why code that
+works on your laptop and on a GCE VM needs no code change: it's the same
+credential-resolution chain, different backing source. Project IDs are
+globally unique and immutable by design — they're used as literal
+components of resource names and DNS-adjacent identifiers (like
+`PROJECT_ID.appspot.com`), so Google can never recycle one once claimed,
+even after project deletion.
+
 ## Exercise
 
 Create a new project called `gcp-mastery-path-<yourname>`, link a billing

@@ -194,6 +194,24 @@ kubectl delete secret db-password-k8s
 | `gcloud run deploy --set-secrets="ENV=secret:version"` | Mount a secret as an env var in Cloud Run. |
 | `gcloud secrets delete` | Permanently delete a secret and all its versions. |
 
+## How It Actually Works
+
+Secret Manager stores each secret as an **immutable, versioned blob**
+encrypted at rest with envelope encryption — Google generates a unique
+data encryption key (DEK) per secret version, encrypts the secret payload
+with it, then encrypts that DEK with a key-encryption key (KEK) managed
+in Cloud KMS, so compromising the storage layer alone never exposes
+plaintext. This versioning model is why you reference secrets by
+`projects/*/secrets/*/versions/latest` or a pinned version number rather
+than editing a secret in place: "updating" a secret actually creates a
+brand-new version and leaves prior versions intact (until explicitly
+destroyed), which is what makes rollback trivial — point consumers back
+at the previous version number. Access is enforced through the ordinary
+IAM Checker path (the `secretmanager.versions.access` permission), and
+every access is captured in Cloud Audit Logs as a distinct event, which
+is what lets you detect a leaked secret being read from an unexpected
+service account or location, not just control who's authorized.
+
 ## Exercise
 
 Create a secret with one version, grant `roles/secretmanager.secretAccessor`

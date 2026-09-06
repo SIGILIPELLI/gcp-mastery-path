@@ -199,6 +199,25 @@ gcloud dns managed-zones delete example-com
 | `gcloud dns managed-zones update --dnssec-state=on` | Enable DNSSEC signing. |
 | `dig <name> <type> +short` | Query DNS directly to verify what's published. |
 
+## How It Actually Works
+
+Cloud DNS answers queries from a globally distributed anycast network of
+name servers, and every record change you publish becomes visible
+essentially everywhere simultaneously because Google's DNS infrastructure
+propagates zone updates internally rather than relying on the classic
+internet DNS assumption of independent resolvers caching stale data —
+the delay users experience after a change is really the **TTL** of the
+*old* record already cached in resolvers upstream of Google (their ISP's
+resolver, browser cache), not a delay in Cloud DNS itself. This is why
+lowering a record's TTL *before* a planned migration is the standard
+trick: it shrinks the maximum staleness window everyone else's caches
+will hold once you actually flip the record. DNSSEC works by chaining
+cryptographic signatures from the root zone down through each delegation
+to your zone's records, so a validating resolver can prove a response
+wasn't forged in transit — enabling it on a Cloud DNS zone means Google
+signs your zone's records and publishes a DS record your registrar must
+also publish, forming the trust chain's next link.
+
 ## Exercise
 
 Create a managed zone for a domain you control (or a throwaway one for

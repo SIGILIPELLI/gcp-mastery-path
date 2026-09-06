@@ -299,6 +299,23 @@ cluster is gone.
 | `gcloud dns record-sets transaction ...` | Point the custom domain at the load balancer's IP. |
 | `gcloud billing budgets create` | Guardrail the whole stack's spend. |
 
+## How It Actually Works
+
+Wiring a load balancer, managed instance group, Cloud SQL, and Cloud CDN
+into one stack exposes how each layer's health/consistency mechanism
+composes: the load balancer's health checks determine which MIG
+instances are even eligible to receive traffic, independent of whether
+the autoscaler considers them "ready" — an instance can be fully booted
+and autoscaled-in yet still receive zero traffic if it's failing its
+configured health check path. Session state is the other cross-cutting
+concern: because the LB can route the same client to a different backend
+instance on every request (no built-in sticky sessions unless you
+explicitly configure them), any app that keeps session data in local
+process memory will behave inconsistently under scale — which is exactly
+why offloading session state to Cloud SQL or a shared cache is a
+correctness requirement, not just a performance optimization, the moment
+you go from one instance to an autoscaled group.
+
 ## Exercise
 
 Build the full chain: GKE cluster with `orders-api`, Firestore for order

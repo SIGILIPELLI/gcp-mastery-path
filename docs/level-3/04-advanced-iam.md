@@ -146,6 +146,25 @@ non-prod org node first.
 | `gcloud iam deny-policies create` | Create a hard deny that overrides any Allow binding. |
 | `--stage=TESTING` | Mark a custom role as provisional during tuning. |
 
+## How It Actually Works
+
+Custom roles and organization policies operate on two different planes
+of the same permission system. A custom role is just a named bundle of
+permissions you assemble from the same catalog predefined roles draw
+from — binding it to a member is evaluated by the exact same hierarchy-
+walking Checker service as any built-in role, so custom roles don't
+change *how* access is granted, only *what* the granted bundle contains.
+Organization policy constraints are structurally different: they don't
+grant or deny specific principals anything — they restrict what
+*configurations* are allowed to exist at all (e.g., "no VM may have an
+external IP"), enforced at resource-creation or resource-update time
+regardless of who's making the call or what IAM role they hold, which is
+why an Owner can still be blocked from creating a resource that violates
+an org policy. IAM Deny policies bridge the two: like org policies
+they're evaluated ahead of any Allow grant and can't be overridden by
+role bindings, but like IAM roles they target specific principals and
+specific permissions rather than resource configuration shapes.
+
 ## Exercise
 
 Create a custom role with exactly the four permissions needed to view and

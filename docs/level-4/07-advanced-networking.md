@@ -133,6 +133,27 @@ gcloud compute routers nats update prod-nat \
 | `gcloud compute forwarding-rules create --target-service-attachment=` | Consume a service privately via PSC. |
 | `gcloud compute routers nats update --min-ports-per-vm=` | Avoid NAT port exhaustion for connection-heavy VMs. |
 
+## How It Actually Works
+
+Cloud Interconnect and Cloud VPN both extend your VPC beyond Google's
+network, but through different physical mechanisms with different
+consistency implications. Dedicated Interconnect is a literal physical
+cross-connect into a Google colocation facility — traffic never touches
+the public internet at all, which is what gives it predictable low
+latency and why it requires being physically present (or using a
+partner) at a specific facility. Cloud VPN instead tunnels encrypted
+traffic over the public internet using IPsec, so its latency and jitter
+inherit whatever variability the public internet path between your
+gateway and Google's has that day — HA VPN mitigates this for
+availability (not latency) by running two tunnels to two different
+Google gateway IPs so a single gateway failure doesn't drop connectivity.
+Network Connectivity Center generalizes both into a hub-and-spoke model
+where Google's backbone itself acts as the hub, propagating routes
+between spokes (VPCs, on-prem sites via Interconnect/VPN) the same way
+BGP would across physical routers, but implemented as a software-defined
+route-exchange service rather than requiring you to mesh every spoke to
+every other spoke manually.
+
 ## Exercise
 
 Design an NCC hub connecting three VPCs (no pairwise peering) and describe
