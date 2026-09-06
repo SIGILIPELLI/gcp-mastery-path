@@ -1901,6 +1901,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2429,6 +2451,23 @@ level covers folder/project structuring in depth.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The Well-Architected Framework's five pillars aren't independent
+checklists — they're competing forces that architecture decisions
+actually trade off against each other in the underlying infrastructure.
+Adding redundancy for reliability (multi-zone, multi-region deployment)
+mechanically increases cost (more running resources) and often
+operational complexity (more failure modes to reason about, more
+replication lag to manage), which is why a well-architected system
+explicitly documents <em>which</em> pillar it's optimizing for a given
+component rather than trying to maximize all five simultaneously.
+Performance efficiency and cost optimization intersect at the resource-
+sizing level in a very literal way: GCP bills machine types and disk
+tiers on fixed pricing, so the "efficient" configuration is the smallest
+resource that meets your latency SLA, discoverable only by load-testing
+against real traffic patterns — architectural review at this level is
+fundamentally an exercise in reading utilization metrics against SLA
+targets, not applying abstract principles.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Take the multi-tier CI/CD project from Level 3 Module 10 and score it
 against all five pillars — one sentence each on what it does well and one

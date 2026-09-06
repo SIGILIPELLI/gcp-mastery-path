@@ -812,6 +812,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2478,6 +2500,23 @@ files for genuinely external systems, and rotate/delete them when done:
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Every IAM check GCP performs evaluates the same abstraction: a <strong>policy</strong>
+is a list of bindings, each pairing a role (a bundle of permissions) with
+a set of members, attached to a resource. Resources form a hierarchy —
+Organization → Folder → Project → individual resource — and policies are
+<strong>additive down the tree</strong>: a role granted at the Organization node is
+inherited by every folder, project, and resource beneath it, and there is
+no way to revoke an inherited grant lower down (only Deny policies, a
+separate mechanism, can override an inherited Allow). This is why the
+"who can do what" question is really a union: <code>gcloud projects
+get-iam-policy</code> only shows bindings set <em>at that node</em>, not the inherited
+ones from folders/org above it, which is the single most common cause of
+"but I never granted that role" surprises. Under the hood, every API call
+hits a common <strong>Checker service</strong> that walks the resource hierarchy
+upward, unions every applicable binding at every ancestor node, and grants
+access if the union contains the requested permission anywhere in the
+chain — deterministic, but hierarchy-wide, not resource-local.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a service account named <code>reporting-bot</code>. Grant it
 <code>roles/storage.objectViewer</code> scoped to a single bucket you own (not the

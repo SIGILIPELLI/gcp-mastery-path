@@ -1738,6 +1738,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2409,6 +2431,24 @@ exists in the registry" for "it passed policy."</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>VPC Service Controls and Binary Authorization enforce security at two
+different points in a resource's lifecycle. VPC Service Controls draws a
+<strong>service perimeter</strong> around a set of projects and blocks API-level data
+exfiltration by intercepting calls to protected services (BigQuery, GCS,
+etc.) and checking whether both the caller's identity <em>and</em> the network
+path it originated from are inside the perimeter — this is why VPC-SC
+can stop a compromised, fully-IAM-authorized service account from
+copying data to an external project: the perimeter check happens
+independently of and in addition to the IAM Checker's normal allow
+decision. Binary Authorization enforces at <strong>deploy time</strong> instead: it
+requires container images pushed to GKE or Cloud Run to carry a
+cryptographic attestation signed by a trusted authority (proving, say,
+that the image passed a vulnerability scan or a specific CI pipeline),
+and the admission controller rejects deployment of any image lacking a
+valid signature — this only works because container image digests are
+content-addressed (a SHA256 hash of the image content), so a signature
+over the digest can't be replayed against a different, tampered image.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Design (command sequence, no live resources needed) a VPC Service Controls
 perimeter around two projects restricting <code>storage.googleapis.com</code>. Write

@@ -1929,6 +1929,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2445,6 +2467,22 @@ resource's generation number, not just "did this run."</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Eventarc is a routing layer built on top of Pub/Sub and Cloud Audit
+Logs — nearly every "direct" GCP resource event you can trigger on (a
+new GCS object, a Firestore write, a Compute Engine state change) is
+actually surfaced first as an Audit Log entry, which Eventarc's
+background pipeline converts into a CloudEvents-formatted Pub/Sub
+message and delivers to your Cloud Run service or Cloud Function. This
+is why Eventarc trigger delivery inherits Pub/Sub's at-least-once
+semantics exactly: your event handler can receive the same event twice
+and must be idempotent, for identical reasons to any Pub/Sub subscriber.
+The CloudEvents envelope format Eventarc standardizes on (source, type,
+id, time, data) is what lets the same trigger/handler pattern work
+uniformly whether the underlying event came from a GCP audit log, a
+custom Pub/Sub topic, or a third-party source registered through
+Eventarc's provider model — your handler code never needs to know which
+raw API produced the event, only the CloudEvents shape it arrives in.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Design an Eventarc trigger that fires a Cloud Run service whenever a new
 object lands in a GCS bucket, and a second trigger that fires a different

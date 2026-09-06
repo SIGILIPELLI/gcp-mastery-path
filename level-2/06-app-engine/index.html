@@ -1344,6 +1344,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2371,6 +2382,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2622,6 +2644,22 @@ entirely.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>App Engine Standard runs your code inside a sandboxed, language-specific
+runtime that Google controls end-to-end — this is what enables true
+scale-to-zero with fast cold starts, because the platform can snapshot
+and restore runtime state far more cheaply than booting a general-purpose
+container, at the cost of restricting what your code can do (no
+arbitrary binaries, limited filesystem access). App Engine Flexible
+instead runs your app inside a normal Compute Engine-backed VM wrapped in
+a Docker container, trading that cold-start speed for full runtime
+freedom and a floor of at least one always-on instance per version.
+Traffic splitting works by rewriting the routing weight in App Engine's
+front-end proxy layer — deploying a new version doesn't send it any
+traffic automatically; a version only receives requests once you shift
+percentage-based routing (or default-serving) to it, which is what makes
+canary releases and instant rollback both just routing-table changes,
+not redeploys.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Deploy a minimal Flask (or equivalent) app to App Engine Standard, confirm it
 responds via <code>gcloud app browse</code>. Make a small change, deploy it as

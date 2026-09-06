@@ -862,6 +862,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2327,6 +2338,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2558,6 +2580,24 @@ SSH-ing in by hand every time:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A Compute Engine VM is not a dedicated physical machine — it's a set of
+resource guarantees (vCPU, memory, disk) scheduled onto one of Google's
+physical hosts by the Borg-descended cluster scheduler, with your virtual
+disks served over the network from Persistent Disk storage rather than
+local spinning rust. This separation is what makes <strong>live migration</strong>
+possible: when Google needs to patch or retire the underlying host,
+it transparently copies your VM's memory pages to a new host while it
+keeps running, does a final brief pause to sync the last dirty pages, then
+resumes execution on the new host — no reboot, no IP change, because the
+network identity and attached disks never moved, only the compute
+context did. This only works for standard VMs; GPU-attached and certain
+sole-tenant configurations instead get a maintenance-window notification
+because migrating GPU state isn't supported. Machine types are similarly
+decoupled from hardware: changing a VM's machine type is a metadata
+update plus a stop/start cycle, not a physical swap, because the
+scheduler simply re-places the same disk-backed VM onto a host with the
+newly requested shape.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create an <code>e2-micro</code> VM in <code>us-central1-a</code> tagged <code>http-server</code>, with a
 startup script that installs nginx and writes a custom <code>index.html</code>. Add a

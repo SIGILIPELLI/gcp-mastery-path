@@ -2024,6 +2024,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2459,6 +2481,22 @@ one-off <code>gcloud</code> commands nobody remembers running.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A multi-project GCP organization structure works because nearly every
+control plane (IAM, quotas, VPC networking, billing) treats "project" as
+its primary isolation and inheritance boundary, not a cosmetic grouping.
+Resource Manager's folder hierarchy is what turns individual projects
+into a manageable tree: an IAM binding or org policy set on a folder
+applies to every project nested beneath it via the same hierarchy-
+walking Checker mechanism from Level 1, which is what makes folder
+structure (by team, by environment, by business unit) a real access-
+control lever rather than organizational labeling. Shared VPC is the
+mechanism that lets many projects share one network without each
+needing its own VPC and its own peering mesh — a host project owns the
+actual subnets, and service projects' VMs draw IPs from those subnets
+directly as if they were native members, avoiding the non-transitive
+peering limitation entirely for the common case of "many projects, one
+network."</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Design a three-folder hierarchy (Production, Non-Production,
 Shared-Services) with at least two projects under Production. Write the

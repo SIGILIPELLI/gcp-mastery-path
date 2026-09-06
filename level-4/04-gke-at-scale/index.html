@@ -1985,6 +1985,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2463,6 +2485,21 @@ node-hours across a large fleet.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Running GKE at scale exposes control-plane limits that don't matter in a
+small cluster. etcd (the cluster's state store) has practical size and
+write-throughput ceilings, so GKE's control plane scaling in Autopilot
+and large clusters relies on watch-request batching and sharded API
+server instances to keep every controller's watch stream from
+overwhelming a single etcd leader — this is the underlying reason GKE
+imposes node-count and object-count guidance rather than allowing
+unlimited resources. Multi-cluster and fleet management (via GKE Hub)
+work by having each member cluster's control plane independently
+register its state with a central fleet service, rather than one
+cluster's API server actually controlling another — this is why
+multi-cluster Services and config sync propagate on their own reconcile
+loops with real (if usually sub-second) lag, rather than being instantly
+consistent across clusters the way a single cluster's own objects are.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Design a two-team shared cluster: two namespaces, a <code>ResourceQuota</code> per
 namespace, and a <code>NetworkPolicy</code> denying cross-namespace ingress. Confirm

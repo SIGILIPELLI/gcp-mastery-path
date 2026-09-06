@@ -918,6 +918,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2327,6 +2338,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2513,6 +2535,22 @@ for outbound access and is unreachable directly from the internet.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A GCP VPC is <strong>global</strong>, not regional — a single VPC's subnets can span
+every region on Earth without any VPN or peering, because the network is
+implemented as a software-defined control plane (Andromeda) that
+programs routing state directly into the hypervisors hosting your VMs,
+rather than routing packets through physical per-region routers the way
+traditional data-center networks do. This is why adding a subnet in a new
+region takes seconds, not a network re-architecture: you're just adding
+an entry to a distributed routing table, not provisioning new hardware.
+Firewall rules work the same way — they're not applied at a perimeter
+device but are evaluated per-VM by the hypervisor itself, per-packet,
+using the highest-priority matching rule (lower priority number wins),
+which is why a single overly broad <code>deny-all</code> at priority 1000 will
+silently swallow every intended <code>allow</code> rule sitting at priority 1000 or
+lower — priority order, not human-friendly rule position, is what the
+enforcement path actually consults.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a custom-mode VPC with one subnet, a firewall rule allowing internal
 traffic only, and a private (<code>--no-address</code>) VM inside it. Set up Cloud NAT

@@ -1514,6 +1514,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2419,6 +2441,26 @@ misconfigured route leaks.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>VPC Peering and Shared VPC solve cross-project connectivity through
+completely different mechanisms. Peering establishes routes between two
+independently-owned VPCs at the network layer — each side must
+explicitly advertise routes to the other, peered networks remain
+separately administered, and (critically) peering is <strong>not transitive</strong>:
+if A peers with B and B peers with C, A cannot reach C, because each
+peering relationship only programs routes for the two direct
+participants. Shared VPC instead has one host project literally own the
+network, and service projects are attached as tenants whose VMs receive
+IPs from the host's subnets directly — there's no peering or routing
+translation because service-project VMs are, from the network's
+perspective, first-class members of the same VPC, which is why Shared
+VPC supports transitive reachability across all attached service
+projects while peering does not. Private Service Connect and Private
+Google Access solve a third, different problem — letting VMs without
+external IPs reach Google APIs or other VPCs' services — by publishing
+an internal endpoint IP that the software-defined network resolves and
+routes to the target service's producer VPC, without ever traversing the
+public internet.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create two VPCs in the same project simulating separate teams (<code>team-a-vpc</code>,
 <code>team-b-vpc</code>) with non-overlapping <code>/24</code> subnets. Peer them in both

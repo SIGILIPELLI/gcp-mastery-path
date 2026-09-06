@@ -1243,6 +1243,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2393,6 +2404,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2655,6 +2677,24 @@ stops and the cool-down window passes.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A Google Cloud external HTTP(S) load balancer is not one machine — it's
+a globally distributed proxy layer (Google Front End, or GFE) running at
+edge points of presence worldwide, which is why a single anycast IP
+address can serve requests routed to the nearest healthy backend without
+DNS-based geo-routing tricks. The Horizontal Pod Autoscaler and Managed
+Instance Group autoscaler both work on the same principle underneath:
+they poll a metric (CPU utilization, custom metric, or request count)
+on a fixed interval, compare it against your target, and compute
+<code>desiredReplicas = currentReplicas × (currentMetric / targetMetric)</code>,
+then round and clamp to your min/max — this is why autoscaling reacts in
+discrete steps, not smoothly, and why setting an unrealistically low
+target causes oscillation (thrashing) as it repeatedly overshoots and
+undershoots. Health checks are what let the load balancer safely route
+around a newly-added-but-not-yet-ready instance: the LB actively polls
+each backend's health endpoint on its own schedule and only adds an
+instance to the serving rotation once it's passed the configured number
+of consecutive successful checks.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Build the full chain above, confirm <code>curl</code> against the reserved IP round-robins
 across at least 2 instances, then generate load with a tool like <code>hey</code> or

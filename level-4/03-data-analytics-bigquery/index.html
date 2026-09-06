@@ -1957,6 +1957,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2466,6 +2488,24 @@ delete in a Workflow/Cloud Build pipeline so nothing lingers:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>BigQuery's speed on multi-terabyte scans comes from two structural
+decisions working together. Storage is <strong>columnar</strong>: each column is
+stored as a separate, independently compressed block, so a query that
+touches 3 of a table's 50 columns physically reads only those 3 columns'
+blocks off disk — this is why <code>SELECT *</code> costs dramatically more than
+selecting needed columns, and why BigQuery's byte-scanned pricing model
+directly reflects this columnar I/O, not row count. Execution uses
+<strong>Dremel</strong>, a distributed query engine that compiles your SQL into a
+tree of execution stages and fans each stage out across thousands of
+workers in parallel, with intermediate results shuffled between stages
+over a dedicated high-bandwidth network (Jupiter) rather than written to
+disk between steps — this multi-level tree architecture (not a single
+coordinator distributing to flat workers) is what lets BigQuery return
+aggregate results over petabyte-scale tables in seconds: each level of
+the tree partially aggregates its children's results before passing
+upward, so the final coordinator combines already-mostly-reduced data
+rather than raw rows.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Design a BigQuery table schema for an events table partitioned by day and
 clustered by <code>customer_id</code>. Write two queries — one that prunes partitions

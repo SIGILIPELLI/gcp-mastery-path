@@ -879,6 +879,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2531,6 +2553,23 @@ covered later in this series alongside Cloud CDN.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud Storage is not a filesystem — "folders" in the console are a UI
+fiction layered over a flat namespace where every object's real identity
+is its full key string (<code>images/2024/photo.jpg</code> is one key, not nested
+directories). Objects are immutable: there is no in-place byte edit, only
+whole-object PUT/replace, which is what makes GCS's <strong>strong global
+consistency</strong> achievable — every operation (read-after-write,
+read-after-update, read-after-delete, and list) is immediately consistent
+worldwide, because a write publishes a completely new object version
+rather than mutating shared state that other regions could observe
+mid-change. Under the hood, each object is erasure-coded and replicated
+across multiple failure domains at write time before the PUT acknowledges
+success, which is also why storage classes (Standard/Nearline/Coldline/
+Archive) differ only in retrieval latency and minimum-storage-duration
+economics, not in durability — all classes carry the same eleven-nines
+annual durability target because the redundancy scheme is identical
+underneath.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a bucket, upload a small <code>index.html</code> you write yourself, make the
 bucket's objects public, and enable static website hosting with

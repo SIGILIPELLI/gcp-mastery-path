@@ -2184,6 +2184,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cleanup" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2329,6 +2340,17 @@
     <span class="md-ellipsis">
       
         Architecture Framework review
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2548,6 +2570,25 @@ weekly against both clusters' projects to catch IAM and machine-type drift.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>This capstone's multi-region fleet is a composition of every mechanism
+covered across all four levels operating simultaneously rather than in
+isolation: IAM's hierarchy-walking Checker service authorizes every API
+call your Terraform/CI pipeline makes; Shared VPC and org-policy
+constraints bound what any of those calls are even allowed to
+provision; Network Connectivity Center propagates routes between
+regional VPCs the same way BGP would across physical routers, but as a
+software-defined route-exchange service; each GKE cluster's own
+watch-and-reconcile control loop keeps its workload converging toward
+declared state in its own etcd, independently of every other cluster in
+the fleet, which is why cross-cluster consistency in a fleet has real
+(if small) propagation lag rather than being instantaneous. The
+engineering discipline this project actually tests is the ability to
+reason about how these independent, loosely-coupled control loops (IAM,
+scheduler, autoscaler, NCC route propagation, cross-region replication)
+interact and fail together — most production incidents in real
+multi-region GCP environments are exactly this kind of cross-mechanism
+interaction, not a single service behaving incorrectly on its own.</p>
 <h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h2>
 <p>Tear down in reverse order: game-day validation stops, Dataflow job
 cancelled, Eventarc trigger and Pub/Sub topic deleted, fleet memberships

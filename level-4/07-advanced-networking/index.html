@@ -2069,6 +2069,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2417,6 +2439,25 @@ Increase <code>--min-ports-per-vm</code> explicitly for connection-heavy workloa
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud Interconnect and Cloud VPN both extend your VPC beyond Google's
+network, but through different physical mechanisms with different
+consistency implications. Dedicated Interconnect is a literal physical
+cross-connect into a Google colocation facility — traffic never touches
+the public internet at all, which is what gives it predictable low
+latency and why it requires being physically present (or using a
+partner) at a specific facility. Cloud VPN instead tunnels encrypted
+traffic over the public internet using IPsec, so its latency and jitter
+inherit whatever variability the public internet path between your
+gateway and Google's has that day — HA VPN mitigates this for
+availability (not latency) by running two tunnels to two different
+Google gateway IPs so a single gateway failure doesn't drop connectivity.
+Network Connectivity Center generalizes both into a hub-and-spoke model
+where Google's backbone itself acts as the hub, propagating routes
+between spokes (VPCs, on-prem sites via Interconnect/VPN) the same way
+BGP would across physical routers, but implemented as a software-defined
+route-exchange service rather than requiring you to mesh every spoke to
+every other spoke manually.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Design an NCC hub connecting three VPCs (no pairwise peering) and describe
 how many peering relationships this would have required without NCC as a

@@ -1260,6 +1260,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2371,6 +2382,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2608,6 +2630,23 @@ keys.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud DNS answers queries from a globally distributed anycast network of
+name servers, and every record change you publish becomes visible
+essentially everywhere simultaneously because Google's DNS infrastructure
+propagates zone updates internally rather than relying on the classic
+internet DNS assumption of independent resolvers caching stale data —
+the delay users experience after a change is really the <strong>TTL</strong> of the
+<em>old</em> record already cached in resolvers upstream of Google (their ISP's
+resolver, browser cache), not a delay in Cloud DNS itself. This is why
+lowering a record's TTL <em>before</em> a planned migration is the standard
+trick: it shrinks the maximum staleness window everyone else's caches
+will hold once you actually flip the record. DNSSEC works by chaining
+cryptographic signatures from the root zone down through each delegation
+to your zone's records, so a validating resolver can prove a response
+wasn't forged in transit — enabling it on a Cloud DNS zone means Google
+signs your zone's records and publishes a DS record your registrar must
+also publish, forming the trust chain's next link.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a managed zone for a domain you control (or a throwaway one for
 practice), add an <code>A</code> record and a <code>www</code> <code>CNAME</code>, and verify both with <code>dig</code>

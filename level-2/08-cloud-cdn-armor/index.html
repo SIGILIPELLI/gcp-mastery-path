@@ -1422,6 +1422,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2415,6 +2426,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2664,6 +2686,24 @@ detection from scratch:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud CDN caches responses at Google's edge points of presence keyed by
+the full request (URL, and optionally headers/cookies you configure into
+the cache key), and a cache <strong>hit</strong> is served entirely from the edge
+node's memory/SSD without the request ever reaching your origin backend —
+this is why cache-key configuration matters so much: including an
+unnecessary header (like a session cookie) in the key fragments your
+cache into near-unique entries and silently defeats caching almost
+entirely. Cache invalidation is not a delete-and-refetch operation but a
+tombstone: <code>gcloud compute url-maps invalidate-cdn-cache</code> marks matching
+cached entries stale across every edge node, forcing the next request for
+each to revalidate against origin. Cloud Armor sits in front of this at
+the GFE layer and evaluates security policies <strong>before</strong> a request is
+even proxied toward your backend or the CDN cache — each rule is checked
+in priority order (lowest number first) against the request's IP, headers,
+and (for WAF rules) a pattern-matching engine tuned against known attack
+signatures like SQL injection and XSS payloads, and the first matching
+rule's action (allow/deny/rate-limit) short-circuits evaluation.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Enable CDN on the load balancer from Module 02 with <code>CACHE_ALL_STATIC</code>, <code>curl</code>
 a static asset twice, and confirm the second response shows <code>X-Cache: HIT</code>

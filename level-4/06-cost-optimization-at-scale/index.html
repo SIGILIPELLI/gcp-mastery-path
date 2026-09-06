@@ -2052,6 +2052,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2457,6 +2479,25 @@ mechanism your org uses rather than assuming org policy alone covers it.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cost optimization at fleet scale relies on the same rated-usage pipeline
+covered in Level 2, but the levers that matter change once volume is
+large enough for discount structures to dominate simple resource
+right-sizing. Committed Use Discounts are a <strong>forward-looking rate
+commitment</strong> — you commit to a baseline spend level and GCP applies a
+discounted rate to usage up to that commitment automatically, with no
+change to how resources actually run, which is why CUD planning is
+fundamentally a usage-forecasting exercise rather than an engineering
+one. BigQuery flat-rate/editions pricing flips the billing model
+entirely: instead of paying per byte scanned, you reserve query
+processing capacity (slots) at a fixed price, which only pays off once
+your organization's aggregate on-demand query cost would exceed the
+reservation cost — the crossover point is a real number computable from
+historical billing export data, not a rule of thumb. Recommender's
+machine-generated rightsizing suggestions work by analyzing actual
+utilization telemetry (the same Cloud Monitoring time series from Level
+1) against provisioned capacity, surfacing a specific alternate machine
+type only when sustained utilization data supports it.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Given a hypothetical fleet with a well-established usage floor, write the
 <code>gcloud compute commitments create</code> command for a 1-year resource-based CUD

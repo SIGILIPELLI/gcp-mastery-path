@@ -1693,6 +1693,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2457,6 +2479,24 @@ quota ceiling mid-incident turns a regional outage into a total outage.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Multi-region resilience design comes down to which of two failure
+domains a given GCP service protects against by default. Some services
+(Cloud Storage multi-region buckets, Spanner multi-region instances) are
+<strong>synchronously</strong> replicated across regions as part of every write, so a
+regional outage causes zero data loss because no write ever acknowledged
+success without already being durable in multiple regions — this is
+also why multi-region Spanner writes have higher latency than a
+single-region deployment: every commit must reach quorum across
+geographically distant replicas before acknowledging. Others (regional
+Cloud SQL, most Compute Engine setups) replicate <strong>asynchronously</strong> at
+best or not at all across regions, meaning a DR strategy for them is an
+explicit engineering exercise — cross-region read replicas, or
+scheduled cross-region backup exports — where your Recovery Point
+Objective is fundamentally bounded by replication lag, not by
+architecture alone. Understanding which category a service falls into is
+the actual design decision; "multi-region" is not a single guarantee
+level across GCP's catalog.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Provision (or plan on paper, given no real credentials) a Cloud SQL
 primary in one region and a read replica in another. Write the exact

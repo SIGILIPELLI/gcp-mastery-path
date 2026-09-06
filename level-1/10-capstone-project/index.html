@@ -1047,6 +1047,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2577,6 +2599,22 @@ continues — don't stop at step 3 without verifying with step 4.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Stitching VPC, Compute Engine, Cloud SQL, and IAM together in one project
+exposes the layering you've been building module by module: the VPC's
+private subnet range and firewall rules are enforced by the hypervisor
+per-packet before a request ever reaches your VM's kernel; the VM's
+service account (not your personal identity) is what Cloud SQL's IAM
+authentication actually checks when the app connects via the Cloud SQL
+Auth Proxy, which works by opening a local Unix socket or TCP port and
+tunnelling traffic through an encrypted, IAM-authorized connection to the
+instance's private IP — your application code never needs the database
+password or a public IP path. When you tear the stack down, dependency
+order matters for the same reason Terraform computes a graph: Cloud SQL
+must be deleted before the VPC it's peered into, and firewall rules
+attached to the network must go before the network itself, because each
+resource's existence is a precondition the next one's API call checks at
+delete time, not just at create time.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Extend the notes app with a <code>DELETE /api/notes/&lt;id&gt;</code> endpoint and a delete
 button per note in the frontend. Redeploy both pieces, verify delete works

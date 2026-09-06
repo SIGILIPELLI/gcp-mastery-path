@@ -969,6 +969,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2317,6 +2328,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2542,6 +2564,24 @@ always-on minimum-instances setting when cold starts matter more than cost).</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud Run and Cloud Functions both bill by <strong>actual CPU/memory time
+consumed while handling a request</strong>, which only makes sense once you see
+what happens between requests: when no traffic arrives, the platform
+scales your container down to zero instances and reclaims the compute
+entirely — there's no idle VM burning money. The first request after a
+scale-to-zero period pays a <strong>cold start</strong>: the platform must pull your
+container image (or, for Cloud Functions, build/mount it), start the
+process, and run it through its bootstrap before it can accept the
+request, which is why cold-start latency correlates directly with image
+size and language runtime init cost. Once running, an instance can serve
+many concurrent requests inside the same container (Cloud Run's
+<code>--concurrency</code> flag controls this) because the platform is really
+managing a thin scheduling and routing layer over ordinary Linux
+containers, multiplexing requests the same way a normal web server would
+multiplex threads — the "serverless" abstraction is entirely about who
+manages the placement decision, not a fundamentally different execution
+model.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Deploy an HTTP Cloud Function that returns the current server time as JSON.
 Separately, containerize a tiny Flask (or Express, or any framework you

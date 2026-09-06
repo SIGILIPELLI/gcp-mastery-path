@@ -1305,6 +1305,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2349,6 +2360,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2612,6 +2634,24 @@ documents (or the whole GCP project) is the practical cleanup path.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Firestore and Bigtable sit at opposite ends of the same underlying idea —
+distributing rows across many servers by key range — but solve very
+different consistency problems. Firestore layers a <strong>document/collection
+model with real-time listeners</strong> on top of a globally replicated,
+strongly consistent backend: when a client subscribes to a query, the
+server keeps a live watch and pushes only the <em>diff</em> (added/modified/
+removed documents) whenever a write changes the result set, which is why
+Firestore listeners feel instantaneous but scale poorly past a few
+thousand concurrent listeners on the same query — each write potentially
+fans out to every listener watching a matching query. Bigtable instead
+optimizes for raw throughput over a single <strong>flat, sorted key space</strong>:
+rows are physically stored in row-key order and split into contiguous
+key-range shards (tablets) as data grows, so query performance is
+entirely a function of row-key design — sequential keys (like a
+timestamp prefix) create write hotspots because all new writes land on
+the same tablet, while a well-distributed key (like a hashed prefix)
+spreads writes evenly across tablets and nodes.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a Firestore Native database, then (using the Firestore emulator or
 console, since <code>gcloud</code> doesn't write individual documents) add a handful of

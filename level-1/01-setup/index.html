@@ -806,6 +806,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2327,6 +2338,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2557,6 +2579,25 @@ level uses now, so later lessons don't stop to ask:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>gcloud auth login</code> doesn't store your password anywhere — it runs an OAuth
+2.0 authorization-code flow: the CLI opens a browser to Google's consent
+screen, receives a short-lived authorization code on a local redirect URI,
+then exchanges that code for an access token and a long-lived refresh
+token, which land in <code>~/.config/gcloud/credentials.db</code> (SQLite). Every
+subsequent <code>gcloud</code>/API call presents the access token; when it expires
+(~1 hour) the SDK silently uses the refresh token to mint a new one — you
+never re-enter credentials. <code>gcloud auth application-default login</code> writes
+a <em>separate</em> credential file that client libraries (not the CLI) read via
+Application Default Credentials — the SDK checks, in order, the
+<code>GOOGLE_APPLICATION_CREDENTIALS</code> env var, this ADC file, then the
+attached service account's metadata-server token, which is why code that
+works on your laptop and on a GCE VM needs no code change: it's the same
+credential-resolution chain, different backing source. Project IDs are
+globally unique and immutable by design — they're used as literal
+components of resource names and DNS-adjacent identifiers (like
+<code>PROJECT_ID.appspot.com</code>), so Google can never recycle one once claimed,
+even after project deletion.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a new project called <code>gcp-mastery-path-&lt;yourname&gt;</code>, link a billing
 account to it, install <code>gcloud</code> (or open Cloud Shell), run <code>gcloud init</code>

@@ -2086,6 +2086,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2232,6 +2243,17 @@
     <span class="md-ellipsis">
       
         Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2397,6 +2419,25 @@ retrofitting CMEK onto an existing bucket.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Compliance controls in GCP largely reduce to two enforcement
+mechanisms you've already seen doing other jobs. Data residency and
+sovereignty requirements are enforced through the
+<code>gcp.resourceLocations</code> organization policy constraint from Level 3 —
+it's checked at resource-creation time by the same policy-evaluation
+layer that blocks any other constraint violation, which is why a
+resource that violates a residency constraint fails to even provision
+rather than being created and later flagged. Audit and evidence
+requirements lean entirely on Cloud Audit Logs' immutable, append-only
+log stream: Admin Activity logs are captured automatically for every
+API call regardless of IAM permission level (even an Owner's actions are
+logged) and cannot be disabled, which is what makes them usable as
+compliance evidence — a control that could be silently turned off by
+the party being audited wouldn't satisfy most frameworks' requirements
+in the first place. Access Transparency extends this further by logging
+<em>Google's own personnel</em> accessing your data during support
+interactions, using the same underlying audit-log infrastructure but
+sourced from Google-internal access rather than your own API calls.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Write the command to create an Assured Workloads folder for a hypothetical
 regime, and describe (from the regime template concept) what categories of

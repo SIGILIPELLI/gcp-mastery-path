@@ -1710,6 +1710,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2404,6 +2426,23 @@ broken.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud Trace and Cloud Profiler instrument two different axes of the same
+running system. Trace captures <strong>distributed spans</strong>: each request
+carries a trace context (a trace ID plus parent span ID) propagated via
+HTTP headers across every service hop, and each service reports its own
+span's start/end timestamps back to Cloud Trace independently — the
+full waterfall view you see is reconstructed <em>after the fact</em> by
+grouping every span that shares a trace ID, not built live by a single
+coordinating process, which is why missing propagation headers in one
+hop silently breaks the trace into two disconnected fragments rather
+than raising an error. Cloud Profiler instead works by periodically
+interrupting your running process (statistical sampling, typically tens
+of times per second) and recording the current call stack, aggregating
+thousands of these samples over minutes into a proportional picture of
+where CPU/memory time is actually spent — this sampling approach is what
+keeps profiler overhead low enough to run continuously in production,
+unlike full instrumentation-based profiling which would slow every call.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Instrument a sample Cloud Run service with OpenTelemetry tracing across two
 manually-created spans (an outer request span and one inner "downstream

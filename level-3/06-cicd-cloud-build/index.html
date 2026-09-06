@@ -1665,6 +1665,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2440,6 +2462,22 @@ pipeline: yes/no."</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cloud Build executes your pipeline as a sequence of Docker containers
+run one after another on a build VM that Google provisions on demand and
+tears down when the build finishes — you're billed only for build-minutes
+actually consumed, and each step's container shares a single <code>/workspace</code>
+volume, which is the <em>only</em> thing steps share; environment variables and
+in-memory state from one step don't carry to the next, only files written
+to <code>/workspace</code> do. This container-per-step model is why a Cloud Build
+step can run literally any tool with a public image (Terraform, kubectl,
+a custom linter) without Google needing to bake support for every tool
+into the platform. Build triggers work by registering a webhook with your
+source repository (GitHub, Cloud Source Repositories) — a push event
+posts to Cloud Build's endpoint, which matches the event against your
+trigger's branch/tag filter and, on a match, starts a build using the
+<code>cloudbuild.yaml</code> at the commit's exact revision, which is why in-flight
+builds are unaffected by a subsequent push to the same branch.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Write a <code>cloudbuild.yaml</code> that builds an image, pushes it to a new Artifact
 Registry Docker repo, and deploys it to Cloud Run — tagging by
