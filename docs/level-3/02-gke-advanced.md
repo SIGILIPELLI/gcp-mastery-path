@@ -1,3 +1,7 @@
+---
+description: "Kubernetes on GCP (GKE Advanced) — Level 2 got a GKE Autopilot cluster running a service. This module goes deeper: node pool strategy, workload identity…"
+---
+
 # 02 · Kubernetes on GCP (GKE Advanced)
 
 Level 2 got a GKE Autopilot cluster running a service. This module goes

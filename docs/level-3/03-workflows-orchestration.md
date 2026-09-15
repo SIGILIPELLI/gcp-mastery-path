@@ -1,3 +1,7 @@
+---
+description: "Cloud Workflows & Orchestration — Pub/Sub (Level 2) decouples services with events, but some processes need explicit, ordered steps with branching…"
+---
+
 # 03 · Cloud Workflows & Orchestration
 
 Pub/Sub (Level 2) decouples services with events, but some processes need

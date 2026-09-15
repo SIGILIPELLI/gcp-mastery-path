@@ -1,3 +1,7 @@
+---
+description: "Cost Management & Billing — Every module in this course has said 'remember to clean up' for a reason: GCP bills for what exists, not what you're actively…"
+---
+
 # 09 · Cost Management & Billing
 
 Every module in this course has said "remember to clean up" for a reason:

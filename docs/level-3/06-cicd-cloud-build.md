@@ -1,3 +1,7 @@
+---
+description: "CI/CD (Cloud Build, Artifact Registry) — $SHORT_SHA and $PROJECT_ID are Cloud Build substitutions, populated automatically from the triggering commit …"
+---
+
 # 06 · CI/CD (Cloud Build, Artifact Registry)
 
 **Cloud Build** runs a sequence of container-based build steps triggered by

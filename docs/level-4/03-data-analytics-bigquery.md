@@ -1,3 +1,7 @@
+---
+description: "Data Analytics (BigQuery, Dataflow, Dataproc) — GCP's analytics stack has three layers most orgs end up using together: BigQuery for warehousing and SQL…"
+---
+
 # 03 · Data Analytics (BigQuery, Dataflow, Dataproc)
 
 GCP's analytics stack has three layers most orgs end up using together:

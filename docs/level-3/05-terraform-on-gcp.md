@@ -1,3 +1,7 @@
+---
+description: "Terraform on GCP (Advanced) — Level 1's Terraform intro covered a single resource block or two. This module covers the patterns that matter once a…"
+---
+
 # 05 · Terraform on GCP (Advanced)
 
 Level 1's Terraform intro covered a single resource block or two. This

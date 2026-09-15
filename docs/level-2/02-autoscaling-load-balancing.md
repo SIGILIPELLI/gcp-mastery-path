@@ -1,3 +1,7 @@
+---
+description: "Autoscaling & Load Balancing — A single Compute Engine VM (Level 1, Module 03) has a ceiling: one machine, one failure domain. This module builds the…"
+---
+
 # 02 · Autoscaling & Load Balancing
 
 A single Compute Engine VM (Level 1, Module 03) has a ceiling: one machine,

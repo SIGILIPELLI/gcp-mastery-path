@@ -1,3 +1,7 @@
+---
+description: "Capstone Project — Time to combine everything from this level into one small but real end-to-end application: a static frontend on Cloud Storage, a Cloud…"
+---
+
 # 10 · Capstone Project
 
 Time to combine everything from this level into one small but real

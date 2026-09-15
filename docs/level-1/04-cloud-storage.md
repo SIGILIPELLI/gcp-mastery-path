@@ -1,3 +1,7 @@
+---
+description: "Cloud Storage — Bucket names are globally unique across all of Cloud Storage, not just your project — like domain names. Pick something namespaced, e.g.…"
+---
+
 # 04 · Cloud Storage
 
 **Cloud Storage** is GCP's object storage service — durable, scalable

@@ -1,3 +1,7 @@
+---
+description: "Advanced Serverless (Eventarc at Scale) — Level 1-2 covered Cloud Run/Functions triggered directly. Eventarc generalizes triggering: any of ~150+ Google…"
+---
+
 # 02 · Advanced Serverless (Eventarc at Scale)
 
 Level 1-2 covered Cloud Run/Functions triggered directly. **Eventarc**

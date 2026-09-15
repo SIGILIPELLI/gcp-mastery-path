@@ -1,3 +1,7 @@
+---
+description: "Advanced Networking (Interconnect, Network Connectivity Center) — Level 3 introduced Interconnect for single hybrid links. At scale, orgs need many sites…"
+---
+
 # 07 · Advanced Networking (Interconnect, Network Connectivity Center)
 
 Level 3 introduced Interconnect for single hybrid links. At scale, orgs

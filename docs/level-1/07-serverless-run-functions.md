@@ -1,3 +1,7 @@
+---
+description: "Cloud Functions & Cloud Run — GCP has two serverless compute products that solve overlapping but distinct problems. Cloud Functions runs a single function…"
+---
+
 # 07 · Cloud Functions & Cloud Run
 
 GCP has two serverless compute products that solve overlapping but distinct

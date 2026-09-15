@@ -1,3 +1,7 @@
+---
+description: "App Engine — Level 1 deployed containers with Cloud Run and VMs with Compute Engine. App Engine predates both — it's Google's original fully-managed…"
+---
+
 # 06 · App Engine
 
 Level 1 deployed containers with Cloud Run and VMs with Compute Engine.

@@ -1,3 +1,7 @@
+---
+description: "Secret Manager & Config — Every module so far that needed a credential — a database password, an API key — has quietly assumed it lives somewhere safe.…"
+---
+
 # 07 · Secret Manager & Config
 
 Every module so far that needed a credential — a database password, an API

@@ -1,3 +1,7 @@
+---
+description: "Setup & gcloud CLI — Every GCP lesson in this level assumes you have a Google Cloud account, a project to work in, and the gcloud command-line tool…"
+---
+
 # 01 · Setup & gcloud CLI
 
 Every GCP lesson in this level assumes you have a Google Cloud account, a

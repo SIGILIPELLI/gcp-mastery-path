@@ -1,3 +1,7 @@
+---
+description: "Compute Engine — Names look like e2-micro, e2-medium, n2-standard-4 (family-tier-vCPUs). The free tier covers one e2-micro (or equivalent) instance per…"
+---
+
 # 03 · Compute Engine
 
 **Compute Engine** is GCP's infrastructure-as-a-service offering: virtual

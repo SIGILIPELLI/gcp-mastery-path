@@ -1,3 +1,7 @@
+---
+description: "Cloud CDN & Cloud Armor — The global HTTP(S) load balancer built in Module 02 sends every request all the way to a backend instance. Two add-ons attach…"
+---
+
 # 08 · Cloud CDN & Cloud Armor
 
 The global HTTP(S) load balancer built in [Module 02](02-autoscaling-load-balancing.md)

@@ -1,3 +1,7 @@
+---
+description: "Infrastructure as Code (Terraform on GCP) — Every resource in this level so far was created with an imperative gcloud command — run it once, and the…"
+---
+
 # 09 · Infrastructure as Code (Terraform on GCP)
 
 Every resource in this level so far was created with an imperative `gcloud`

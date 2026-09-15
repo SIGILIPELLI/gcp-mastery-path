@@ -1,3 +1,7 @@
+---
+description: "Cloud Monitoring & Logging — The query language is the same one used in the Logs Explorer in the console — filters on resource.type, resource.labels.*…"
+---
+
 # 08 · Cloud Monitoring & Logging
 
 **Cloud Logging** collects and lets you search logs from every GCP service;

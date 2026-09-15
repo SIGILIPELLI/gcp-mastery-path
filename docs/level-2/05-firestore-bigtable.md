@@ -1,3 +1,7 @@
+---
+description: "Firestore & Bigtable Deep Dive — Level 1's Cloud SQL module covered relational storage. Not everything fits a table with a fixed schema, and not…"
+---
+
 # 05 · Firestore & Bigtable Deep Dive
 
 Level 1's Cloud SQL module covered relational storage. Not everything fits a

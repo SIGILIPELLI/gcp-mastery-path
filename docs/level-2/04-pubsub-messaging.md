@@ -1,3 +1,7 @@
+---
+description: "Pub/Sub Messaging — Every service so far has talked directly to another service — a client calling Cloud Run, a load balancer calling a VM. Pub/Sub…"
+---
+
 # 04 · Pub/Sub Messaging
 
 Every service so far has talked directly to another service — a client

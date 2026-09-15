@@ -1,3 +1,7 @@
+---
+description: "Chaos Engineering & Resilience Testing — Level 3's DR module tested failover by hand (pulling a backend). Chaos engineering formalizes this: deliberately…"
+---
+
 # 09 · Chaos Engineering & Resilience Testing
 
 Level 3's DR module tested failover by hand (pulling a backend). Chaos

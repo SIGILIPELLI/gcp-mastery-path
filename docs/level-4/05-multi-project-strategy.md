@@ -1,3 +1,7 @@
+---
+description: "Multi-Project Strategy (Organizations, Folders) — A single project works for a demo; a real org needs a resource hierarchy — Organization → Folders →…"
+---
+
 # 05 · Multi-Project Strategy (Organizations, Folders)
 
 A single project works for a demo; a real org needs a resource hierarchy —

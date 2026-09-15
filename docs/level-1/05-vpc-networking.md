@@ -1,3 +1,7 @@
+---
+description: "VPC Networking Basics — A VPC (Virtual Private Cloud) is your private network inside GCP — global in scope, with subnets carved out region by region. This…"
+---
+
 # 05 · VPC Networking Basics
 
 A **VPC (Virtual Private Cloud)** is your private network inside GCP —

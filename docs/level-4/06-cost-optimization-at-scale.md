@@ -1,3 +1,7 @@
+---
+description: "Cost Optimization at Scale — Level 1-3 mentioned individual cost levers in passing (Spot VMs, budgets). At fleet scale, cost optimization becomes a…"
+---
+
 # 06 · Cost Optimization at Scale
 
 Level 1-3 mentioned individual cost levers in passing (Spot VMs, budgets).

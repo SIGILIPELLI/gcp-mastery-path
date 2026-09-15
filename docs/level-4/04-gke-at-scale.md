@@ -1,3 +1,7 @@
+---
+description: "Kubernetes at Scale (GKE Production Patterns) — Level 3's GKE Advanced module covered node pools, Workload Identity, and autoscaling for one cluster. At…"
+---
+
 # 04 · Kubernetes at Scale (GKE Production Patterns)
 
 Level 3's GKE Advanced module covered node pools, Workload Identity, and

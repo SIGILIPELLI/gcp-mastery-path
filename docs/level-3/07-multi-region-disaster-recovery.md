@@ -1,3 +1,7 @@
+---
+description: "Multi-Region & Disaster Recovery — Committing to active-active for a service that only needs hours of RTO is wasted spend; conversely a payments ledger…"
+---
+
 # 07 · Multi-Region & Disaster Recovery
 
 A single-region deployment is fine until that region has a bad day. This

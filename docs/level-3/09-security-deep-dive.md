@@ -1,3 +1,7 @@
+---
+description: "Security Deep Dive (Security Command Center, VPC Service Controls) — This module covers organization-level security tooling: Security Command Center for…"
+---
+
 # 09 · Security Deep Dive (Security Command Center, VPC Service Controls)
 
 This module covers organization-level security tooling: **Security Command

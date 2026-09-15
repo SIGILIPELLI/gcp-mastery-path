@@ -1,3 +1,7 @@
+---
+description: "Advanced VPC (Peering, Shared VPC, Interconnect) — Level 1 and 2 built single-project VPCs. Real organizations run dozens of projects that still need to…"
+---
+
 # 01 · Advanced VPC (Peering, Shared VPC, Interconnect)
 
 Level 1 and 2 built single-project VPCs. Real organizations run dozens of

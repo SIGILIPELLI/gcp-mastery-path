@@ -1,3 +1,7 @@
+---
+description: "GCP Architecture Framework — Google publishes the Architecture Framework — five pillars for evaluating any GCP design: Operational Excellence…"
+---
+
 # 01 · GCP Architecture Framework
 
 Google publishes the **Architecture Framework** — five pillars for

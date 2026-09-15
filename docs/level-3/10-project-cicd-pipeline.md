@@ -1,3 +1,7 @@
+---
+description: "Project — Multi-Tier CI/CD Pipeline — This capstone wires together five pieces from this level into a real delivery pipeline: a Shared VPC hosting a GKE…"
+---
+
 # 10 · Project — Multi-Tier CI/CD Pipeline
 
 This capstone wires together five pieces from this level into a real

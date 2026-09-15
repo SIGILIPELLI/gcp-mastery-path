@@ -1,3 +1,7 @@
+---
+description: "Advanced Monitoring (Cloud Trace & Profiler) — Level 1's monitoring module covered metrics and logs. Once a system is a handful of services calling each…"
+---
+
 # 08 · Advanced Monitoring (Cloud Trace & Profiler)
 
 Level 1's monitoring module covered metrics and logs. Once a system is a

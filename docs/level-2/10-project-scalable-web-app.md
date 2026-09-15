@@ -1,3 +1,7 @@
+---
+description: "Project — Scalable Web App — This capstone combines four pieces from this level into one working system: a GKE-hosted API (Module 01), an event pushed to…"
+---
+
 # 10 · Project — Scalable Web App
 
 This capstone combines four pieces from this level into one working system:

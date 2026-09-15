@@ -1,3 +1,7 @@
+---
+description: "Advanced IAM (Org Policies, Custom Roles) — Levels 1-2 used predefined roles like roles/storage.objectViewer. At organization scale you also need custom…"
+---
+
 # 04 · Advanced IAM (Org Policies, Custom Roles)
 
 Levels 1-2 used predefined roles like `roles/storage.objectViewer`. At

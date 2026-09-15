@@ -1,3 +1,7 @@
+---
+description: "Cloud SQL — Your app's connection string then points at that socket path instead of a host/port."
+---
+
 # 06 · Cloud SQL
 
 **Cloud SQL** is GCP's fully-managed relational database service — it
