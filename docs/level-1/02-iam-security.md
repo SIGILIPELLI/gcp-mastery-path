@@ -155,6 +155,11 @@ upward, unions every applicable binding at every ancestor node, and grants
 access if the union contains the requested permission anywhere in the
 chain — deterministic, but hierarchy-wide, not resource-local.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — 02 · IAM & Security Basics](https://sigilipelli.github.io/aws-mastery-path/level-1/02-iam-security-basics/)
+- [IBM Cloud — 02 · IAM & Security Basics](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/02-iam-security/)
+
 ## Exercise
 
 Create a service account named `reporting-bot`. Grant it

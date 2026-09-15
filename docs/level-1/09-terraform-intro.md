@@ -214,6 +214,11 @@ resource references (e.g., a subnet referencing a VPC's `self_link`
 forces the VPC to be created first), not the order resources appear in
 the file.
 
+## 🔀 Related lessons on other tracks
+
+- [Azure — 02 · Infrastructure as Code at Scale (Bicep/Terraform)](https://sigilipelli.github.io/azure-mastery-path/level-3/02-iac-at-scale/)
+- [Server Ops — 05 · Infrastructure as Code Overview](https://sigilipelli.github.io/server-ops-mastery-path/level-3/05-infrastructure-as-code-overview/)
+
 ## Exercise
 
 Write a Terraform configuration that declares a Cloud Storage bucket and a

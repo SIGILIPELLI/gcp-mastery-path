@@ -155,6 +155,10 @@ an internal endpoint IP that the software-defined network resolves and
 routes to the target service's producer VPC, without ever traversing the
 public internet.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — Advanced VPC (Peering, Transit Gateway, VPN)](https://sigilipelli.github.io/aws-mastery-path/level-3/01-advanced-vpc/)
+
 ## Exercise
 
 Create two VPCs in the same project simulating separate teams (`team-a-vpc`,

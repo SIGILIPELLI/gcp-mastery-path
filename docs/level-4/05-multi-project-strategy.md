@@ -159,6 +159,10 @@ directly as if they were native members, avoiding the non-transitive
 peering limitation entirely for the common case of "many projects, one
 network."
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — Multi-Account Strategy (Organizations, Control Tower)](https://sigilipelli.github.io/aws-mastery-path/level-4/05-multi-account-strategy/)
+
 ## Exercise
 
 Design a three-folder hierarchy (Production, Non-Production,

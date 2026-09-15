@@ -239,3 +239,7 @@ gcloud compute shared-vpc associated-projects remove app-project --host-project=
   deploy time.
 - Add a second GKE cluster in another region and extend the workflow to
   canary-deploy to both before promoting either to full traffic.
+
+## 🔀 Related lessons on other tracks
+
+- [AWS — Project — Multi-Tier CI/CD Pipeline](https://sigilipelli.github.io/aws-mastery-path/level-3/10-project-cicd-pipeline/)

@@ -320,6 +320,10 @@ why offloading session state to Cloud SQL or a shared cache is a
 correctness requirement, not just a performance optimization, the moment
 you go from one instance to an autoscaled group.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — 10 · Project — Scalable Web App](https://sigilipelli.github.io/aws-mastery-path/level-2/10-project-scalable-web-app/)
+
 ## Exercise
 
 Build the full chain: GKE cluster with `orders-api`, Firestore for order

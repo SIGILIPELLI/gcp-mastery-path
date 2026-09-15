@@ -179,6 +179,12 @@ utilization telemetry (the same Cloud Monitoring time series from Level
 1) against provisioned capacity, surfacing a specific alternate machine
 type only when sustained utilization data supports it.
 
+## 🔀 Related lessons on other tracks
+
+- [AI/ML — 08 · Cost Optimization & Efficient Inference](https://sigilipelli.github.io/ai-ml-mastery-path/level-4/08-efficient-inference/)
+- [AWS — Cost Optimization at Scale](https://sigilipelli.github.io/aws-mastery-path/level-4/06-cost-optimization-at-scale/)
+- [Azure — 09 · Cost Management & Optimization](https://sigilipelli.github.io/azure-mastery-path/level-3/09-cost-management-optimization/)
+
 ## Exercise
 
 Given a hypothetical fleet with a well-established usage floor, write the

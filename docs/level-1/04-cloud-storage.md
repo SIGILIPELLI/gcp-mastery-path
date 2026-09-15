@@ -187,6 +187,10 @@ economics, not in durability — all classes carry the same eleven-nines
 annual durability target because the redundancy scheme is identical
 underneath.
 
+## 🔀 Related lessons on other tracks
+
+- [IBM Cloud — 04 · Cloud Object Storage](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/04-cloud-object-storage/)
+
 ## Exercise
 
 Create a bucket, upload a small `index.html` you write yourself, make the

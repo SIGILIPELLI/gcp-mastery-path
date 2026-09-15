@@ -185,6 +185,10 @@ the tree partially aggregates its children's results before passing
 upward, so the final coordinator combines already-mostly-reduced data
 rather than raw rows.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — Data Lakes & Analytics (S3, Athena, Glue, Redshift)](https://sigilipelli.github.io/aws-mastery-path/level-4/03-data-lakes-analytics/)
+
 ## Exercise
 
 Design a BigQuery table schema for an events table partitioned by day and

@@ -171,6 +171,12 @@ HA, autoscaling) are claims about mechanisms, and the only way to verify
 a mechanism's actual behavior under failure is to trigger the failure
 and observe the mechanism's response directly.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — Chaos Engineering & Resilience Testing](https://sigilipelli.github.io/aws-mastery-path/level-4/09-chaos-engineering-resilience/)
+- [Azure — 06 · Performance Engineering & Load Testing](https://sigilipelli.github.io/azure-mastery-path/level-4/06-performance-load-testing/)
+- [Server Ops — 08 · Chaos Engineering Basics](https://sigilipelli.github.io/server-ops-mastery-path/level-3/08-chaos-engineering-basics/)
+
 ## Exercise
 
 Define a steady-state hypothesis for a sample service (specific latency

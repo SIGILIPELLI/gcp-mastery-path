@@ -216,6 +216,10 @@ every access is captured in Cloud Audit Logs as a distinct event, which
 is what lets you detect a leaked secret being read from an unexpected
 service account or location, not just control who's authorized.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — Compliance & Governance (Config, Audit Manager)](https://sigilipelli.github.io/aws-mastery-path/level-4/08-compliance-governance/)
+
 ## Exercise
 
 Create a secret with one version, grant `roles/secretmanager.secretAccessor`

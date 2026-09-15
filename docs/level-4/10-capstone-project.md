@@ -231,3 +231,8 @@ gcloud network-connectivity hubs delete global-hub --project=net-host-prod -q
   handling holds without data loss.
 - Add a second compliance regime folder alongside the first and compare
   which org policies differ between them, documenting the delta.
+
+## 🔀 Related lessons on other tracks
+
+- [AWS — Capstone Project — Production-Grade Cloud Architecture](https://sigilipelli.github.io/aws-mastery-path/level-4/10-capstone-project/)
+- [Kubernetes — 06 · Designing Production-Grade Cluster Architecture](https://sigilipelli.github.io/kubernetes-mastery-path/level-4/06-production-cluster-architecture/)

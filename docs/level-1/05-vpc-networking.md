@@ -181,6 +181,11 @@ silently swallow every intended `allow` rule sitting at priority 1000 or
 lower — priority order, not human-friendly rule position, is what the
 enforcement path actually consults.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — 05 · VPC Networking Basics](https://sigilipelli.github.io/aws-mastery-path/level-1/05-vpc-networking-basics/)
+- [IBM Cloud — 05 · VPC Networking Basics](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/05-vpc-networking/)
+
 ## Exercise
 
 Create a custom-mode VPC with one subnet, a firewall rule allowing internal

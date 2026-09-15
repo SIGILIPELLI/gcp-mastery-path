@@ -169,6 +169,10 @@ they're evaluated ahead of any Allow grant and can't be overridden by
 role bindings, but like IAM roles they target specific principals and
 specific permissions rather than resource configuration shapes.
 
+## 🔀 Related lessons on other tracks
+
+- [IBM Cloud — 07 · IAM Access Policies Deep Dive](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-2/07-iam-access-policies-deep-dive/)
+
 ## Exercise
 
 Create a custom role with exactly the four permissions needed to view and

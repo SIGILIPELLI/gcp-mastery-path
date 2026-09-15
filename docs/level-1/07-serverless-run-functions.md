@@ -200,6 +200,10 @@ multiplex threads — the "serverless" abstraction is entirely about who
 manages the placement decision, not a fundamentally different execution
 model.
 
+## 🔀 Related lessons on other tracks
+
+- [IBM Cloud — 07 · Cloud Functions](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/07-cloud-functions/)
+
 ## Exercise
 
 Deploy an HTTP Cloud Function that returns the current server time as JSON.

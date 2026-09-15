@@ -182,6 +182,10 @@ in real time and re-exposes that count as a synthetic time series, so a
 spike in "ERROR" log lines becomes something an alerting policy can
 threshold on without you writing custom instrumentation.
 
+## 🔀 Related lessons on other tracks
+
+- [AWS — 08 · CloudWatch Monitoring & Logging](https://sigilipelli.github.io/aws-mastery-path/level-1/08-cloudwatch-monitoring/)
+
 ## Exercise
 
 Redeploy the Cloud Run service from the previous module, generate a handful
