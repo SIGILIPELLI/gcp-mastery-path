@@ -216,8 +216,8 @@ the file.
 
 ## 🔀 Related lessons on other tracks
 
-- [Azure — 02 · Infrastructure as Code at Scale (Bicep/Terraform)](https://sigilipelli.github.io/azure-mastery-path/level-3/02-iac-at-scale/)
-- [Server Ops — 05 · Infrastructure as Code Overview](https://sigilipelli.github.io/server-ops-mastery-path/level-3/05-infrastructure-as-code-overview/)
+- [Azure — 02 · Infrastructure as Code at Scale (Bicep/Terraform)](https://learnmasterypath.com/azure-mastery-path/level-3/02-iac-at-scale/)
+- [Server Ops — 05 · Infrastructure as Code Overview](https://learnmasterypath.com/server-ops-mastery-path/level-3/05-infrastructure-as-code-overview/)
 
 ## Exercise
 

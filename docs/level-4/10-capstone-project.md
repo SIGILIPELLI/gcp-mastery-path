@@ -234,5 +234,5 @@ gcloud network-connectivity hubs delete global-hub --project=net-host-prod -q
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Capstone Project — Production-Grade Cloud Architecture](https://sigilipelli.github.io/aws-mastery-path/level-4/10-capstone-project/)
-- [Kubernetes — 06 · Designing Production-Grade Cluster Architecture](https://sigilipelli.github.io/kubernetes-mastery-path/level-4/06-production-cluster-architecture/)
+- [AWS — Capstone Project — Production-Grade Cloud Architecture](https://learnmasterypath.com/aws-mastery-path/level-4/10-capstone-project/)
+- [Kubernetes — 06 · Designing Production-Grade Cluster Architecture](https://learnmasterypath.com/kubernetes-mastery-path/level-4/06-production-cluster-architecture/)

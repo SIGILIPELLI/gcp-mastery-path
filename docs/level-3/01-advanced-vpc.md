@@ -157,7 +157,7 @@ public internet.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Advanced VPC (Peering, Transit Gateway, VPN)](https://sigilipelli.github.io/aws-mastery-path/level-3/01-advanced-vpc/)
+- [AWS — Advanced VPC (Peering, Transit Gateway, VPN)](https://learnmasterypath.com/aws-mastery-path/level-3/01-advanced-vpc/)
 
 ## Exercise
 

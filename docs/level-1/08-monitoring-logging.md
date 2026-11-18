@@ -184,7 +184,7 @@ threshold on without you writing custom instrumentation.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — 08 · CloudWatch Monitoring & Logging](https://sigilipelli.github.io/aws-mastery-path/level-1/08-cloudwatch-monitoring/)
+- [AWS — 08 · CloudWatch Monitoring & Logging](https://learnmasterypath.com/aws-mastery-path/level-1/08-cloudwatch-monitoring/)
 
 ## Exercise
 

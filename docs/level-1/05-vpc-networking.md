@@ -183,8 +183,8 @@ enforcement path actually consults.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — 05 · VPC Networking Basics](https://sigilipelli.github.io/aws-mastery-path/level-1/05-vpc-networking-basics/)
-- [IBM Cloud — 05 · VPC Networking Basics](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/05-vpc-networking/)
+- [AWS — 05 · VPC Networking Basics](https://learnmasterypath.com/aws-mastery-path/level-1/05-vpc-networking-basics/)
+- [IBM Cloud — 05 · VPC Networking Basics](https://learnmasterypath.com/ibm-cloud-mastery-path/level-1/05-vpc-networking/)
 
 ## Exercise
 

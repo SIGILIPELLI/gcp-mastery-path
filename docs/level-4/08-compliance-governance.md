@@ -166,9 +166,9 @@ sourced from Google-internal access rather than your own API calls.
 
 ## 🔀 Related lessons on other tracks
 
-- [Azure — 06 · Defender for Cloud & Governance (Policy, Blueprints)](https://sigilipelli.github.io/azure-mastery-path/level-3/06-defender-governance/)
-- [AI Manager — 02 · AI Governance & Compliance](https://sigilipelli.github.io/ai-manager-mastery-path/level-3/02-ai-governance-compliance/)
-- [AWS — Compliance & Governance (Config, Audit Manager)](https://sigilipelli.github.io/aws-mastery-path/level-4/08-compliance-governance/)
+- [Azure — 06 · Defender for Cloud & Governance (Policy, Blueprints)](https://learnmasterypath.com/azure-mastery-path/level-3/06-defender-governance/)
+- [AI Manager — 02 · AI Governance & Compliance](https://learnmasterypath.com/ai-manager-mastery-path/level-3/02-ai-governance-compliance/)
+- [AWS — Compliance & Governance (Config, Audit Manager)](https://learnmasterypath.com/aws-mastery-path/level-4/08-compliance-governance/)
 
 ## Exercise
 

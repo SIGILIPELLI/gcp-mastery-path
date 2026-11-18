@@ -218,7 +218,7 @@ service account or location, not just control who's authorized.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Compliance & Governance (Config, Audit Manager)](https://sigilipelli.github.io/aws-mastery-path/level-4/08-compliance-governance/)
+- [AWS — Compliance & Governance (Config, Audit Manager)](https://learnmasterypath.com/aws-mastery-path/level-4/08-compliance-governance/)
 
 ## Exercise
 

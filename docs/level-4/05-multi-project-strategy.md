@@ -161,7 +161,7 @@ network."
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Multi-Account Strategy (Organizations, Control Tower)](https://sigilipelli.github.io/aws-mastery-path/level-4/05-multi-account-strategy/)
+- [AWS — Multi-Account Strategy (Organizations, Control Tower)](https://learnmasterypath.com/aws-mastery-path/level-4/05-multi-account-strategy/)
 
 ## Exercise
 

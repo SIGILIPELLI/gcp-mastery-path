@@ -189,7 +189,7 @@ underneath.
 
 ## 🔀 Related lessons on other tracks
 
-- [IBM Cloud — 04 · Cloud Object Storage](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/04-cloud-object-storage/)
+- [IBM Cloud — 04 · Cloud Object Storage](https://learnmasterypath.com/ibm-cloud-mastery-path/level-1/04-cloud-object-storage/)
 
 ## Exercise
 

@@ -187,7 +187,7 @@ rather than raw rows.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Data Lakes & Analytics (S3, Athena, Glue, Redshift)](https://sigilipelli.github.io/aws-mastery-path/level-4/03-data-lakes-analytics/)
+- [AWS — Data Lakes & Analytics (S3, Athena, Glue, Redshift)](https://learnmasterypath.com/aws-mastery-path/level-4/03-data-lakes-analytics/)
 
 ## Exercise
 

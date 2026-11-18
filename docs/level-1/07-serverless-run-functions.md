@@ -202,7 +202,7 @@ model.
 
 ## 🔀 Related lessons on other tracks
 
-- [IBM Cloud — 07 · Cloud Functions](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-1/07-cloud-functions/)
+- [IBM Cloud — 07 · Cloud Functions](https://learnmasterypath.com/ibm-cloud-mastery-path/level-1/07-cloud-functions/)
 
 ## Exercise
 

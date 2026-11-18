@@ -243,9 +243,9 @@ of consecutive successful checks.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — 02 · Auto Scaling & Load Balancing](https://sigilipelli.github.io/aws-mastery-path/level-2/02-autoscaling-load-balancing/)
-- [IBM Cloud — 02 · Load Balancing & Auto Scaling](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-2/02-load-balancing-autoscaling/)
-- [Kubernetes — 02 · Ingress & Load Balancing](https://sigilipelli.github.io/kubernetes-mastery-path/level-2/02-ingress-load-balancing/)
+- [AWS — 02 · Auto Scaling & Load Balancing](https://learnmasterypath.com/aws-mastery-path/level-2/02-autoscaling-load-balancing/)
+- [IBM Cloud — 02 · Load Balancing & Auto Scaling](https://learnmasterypath.com/ibm-cloud-mastery-path/level-2/02-load-balancing-autoscaling/)
+- [Kubernetes — 02 · Ingress & Load Balancing](https://learnmasterypath.com/kubernetes-mastery-path/level-2/02-ingress-load-balancing/)
 
 ## Exercise
 

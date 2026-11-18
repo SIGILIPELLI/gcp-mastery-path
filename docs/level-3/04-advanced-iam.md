@@ -171,7 +171,7 @@ specific permissions rather than resource configuration shapes.
 
 ## 🔀 Related lessons on other tracks
 
-- [IBM Cloud — 07 · IAM Access Policies Deep Dive](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-2/07-iam-access-policies-deep-dive/)
+- [IBM Cloud — 07 · IAM Access Policies Deep Dive](https://learnmasterypath.com/ibm-cloud-mastery-path/level-2/07-iam-access-policies-deep-dive/)
 
 ## Exercise
 

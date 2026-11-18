@@ -242,4 +242,4 @@ gcloud compute shared-vpc associated-projects remove app-project --host-project=
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Project — Multi-Tier CI/CD Pipeline](https://sigilipelli.github.io/aws-mastery-path/level-3/10-project-cicd-pipeline/)
+- [AWS — Project — Multi-Tier CI/CD Pipeline](https://learnmasterypath.com/aws-mastery-path/level-3/10-project-cicd-pipeline/)

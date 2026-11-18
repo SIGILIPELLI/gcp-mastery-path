@@ -175,9 +175,9 @@ level across GCP's catalog.
 
 ## 🔀 Related lessons on other tracks
 
-- [AWS — Multi-Region & Disaster Recovery](https://sigilipelli.github.io/aws-mastery-path/level-3/07-multi-region-disaster-recovery/)
-- [IBM Cloud — 06 · Multi-Region & Disaster Recovery](https://sigilipelli.github.io/ibm-cloud-mastery-path/level-3/06-multi-region-dr/)
-- [Azure — 07 · High Availability & Disaster Recovery](https://sigilipelli.github.io/azure-mastery-path/level-3/07-ha-disaster-recovery/)
+- [AWS — Multi-Region & Disaster Recovery](https://learnmasterypath.com/aws-mastery-path/level-3/07-multi-region-disaster-recovery/)
+- [IBM Cloud — 06 · Multi-Region & Disaster Recovery](https://learnmasterypath.com/ibm-cloud-mastery-path/level-3/06-multi-region-dr/)
+- [Azure — 07 · High Availability & Disaster Recovery](https://learnmasterypath.com/azure-mastery-path/level-3/07-ha-disaster-recovery/)
 
 ## Exercise
 
