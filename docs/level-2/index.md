@@ -1,3 +1,7 @@
+---
+description: "Level 2 (Intermediate) of the free GCP Mastery Path: Containers on GCP (GKE Basics), Autoscaling & Load Balancing, Cloud DNS & Domains, Pub/Sub Messaging…"
+---
+
 # Level 2 · Intermediate
 
 ## Modules

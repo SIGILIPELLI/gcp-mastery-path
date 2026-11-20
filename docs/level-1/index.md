@@ -1,3 +1,7 @@
+---
+description: "Level 1 (Entry) of the free GCP Mastery Path. Get comfortable with the gcloud CLI and GCP console, understand identity and security basics, and stand up…"
+---
+
 # Level 1 · Entry <span class="level-badge">Foundations</span>
 
 Goal: get comfortable with the `gcloud` CLI and GCP console, understand

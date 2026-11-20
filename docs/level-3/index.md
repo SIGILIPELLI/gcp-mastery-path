@@ -1,3 +1,7 @@
+---
+description: "Level 3 (Advanced) of the free GCP Mastery Path: Advanced VPC (Peering, Shared VPC, Interconnect), Kubernetes on GCP (GKE Advanced), Cloud Workflows &…"
+---
+
 # Level 3 · Advanced
 
 ## Modules

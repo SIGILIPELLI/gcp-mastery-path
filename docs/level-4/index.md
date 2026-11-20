@@ -1,3 +1,7 @@
+---
+description: "Level 4 (Master) of the free GCP Mastery Path: GCP Architecture Framework, Advanced Serverless (Eventarc at Scale), Data Analytics (BigQuery, Dataflow…"
+---
+
 # Level 4 · Master
 
 ## Modules
