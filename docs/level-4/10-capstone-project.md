@@ -1,5 +1,6 @@
 ---
 description: "Capstone Project — Production-Grade Cloud Architecture — This capstone combines nearly everything from Levels 1-4 into one architecture: a multi-project…"
+title: "GCP Capstone: Production-Grade Cloud Architecture"
 ---
 
 # 10 · Capstone Project — Production-Grade Cloud Architecture
