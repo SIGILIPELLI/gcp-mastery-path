@@ -94,7 +94,7 @@ nav:
       - "07 · Cloud Functions & Cloud Run": level-1/07-serverless-run-functions.md
       - "08 · Cloud Monitoring & Logging": level-1/08-monitoring-logging.md
       - "09 · Infrastructure as Code (Terraform on GCP)": level-1/09-terraform-intro.md
-      - "10 · Capstone Project": level-1/10-capstone-project.md
+      - "10 · Project": level-1/10-capstone-project.md
   - "Level 2 · Intermediate":
       - Overview: level-2/index.md
       - "01 · Containers on GCP (GKE Basics)": level-2/01-gke-containers.md
