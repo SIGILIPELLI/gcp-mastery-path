@@ -8,7 +8,7 @@ description: "Free Google Cloud (GCP) course from beginner to advanced -- hands-
 A structured, module-wise Google Cloud Platform training program that takes
 you from creating your first free-tier project to designing production-grade,
 master-level cloud architecture — with runnable `gcloud` CLI commands and
-config in every module and a hands-on project at the end of each level.
+config in every module and a hands-on project at the end of Levels 1–3 and a capstone at the end of Level 4.
 
 ## How the program is organized
 
@@ -25,7 +25,7 @@ config in every module and a hands-on project at the end of each level.
 - Every topic page has runnable `gcloud` commands and config snippets — try
   them in a real (free-tier) GCP project, or in
   [Cloud Shell](https://cloud.google.com/shell) which needs no local install.
-- Each level ends with a project that combines everything learned in that level.
+- Levels 1–3 each end with a project that combines everything learned in that level, and Level 4 ends with the course capstone.
 - Use the search bar (top of the page) to jump straight to a topic.
 - Level 1's capstone includes explicit teardown steps — always clean up
   resources when you're done practicing so a free-tier project doesn't
