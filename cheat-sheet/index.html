@@ -1,0 +1,4825 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A free GCP cheat sheet: 39 quick-reference tables from every level of the GCP Mastery Path, each linked to its full lesson.">
+      
+      
+      
+        <link rel="canonical" href="https://learnmasterypath.com/gcp-mastery-path/cheat-sheet/">
+      
+      
+        <link rel="prev" href="../interview-questions/">
+      
+      
+        <link rel="next" href="../level-1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+  
+  <title>GCP Cheat Sheet: Quick Reference, Beginner to Advanced</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/progress-tracker.css">
+    
+      <link rel="stylesheet" href="../stylesheets/final-quiz.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-05VBGCXN12"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-05VBGCXN12');
+  </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mastery Path">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="GCP Cheat Sheet: Quick Reference, Beginner to Advanced">
+  <meta property="og:description" content="A free GCP cheat sheet: 39 quick-reference tables from every level of the GCP Mastery Path, each linked to its full lesson.">
+  <meta property="og:url" content="https://learnmasterypath.com/gcp-mastery-path/cheat-sheet/">
+  <meta property="og:image" content="https://learnmasterypath.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mastery Path: free structured courses, beginner to master">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GCP Cheat Sheet: Quick Reference, Beginner to Advanced">
+  <meta name="twitter:description" content="A free GCP cheat sheet: 39 quick-reference tables from every level of the GCP Mastery Path, each linked to its full lesson.">
+  <meta name="twitter:image" content="https://learnmasterypath.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9440969811959397"
+     crossorigin="anonymous"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Mastery Path", "item": "https://learnmasterypath.com/"},
+      {"@type": "ListItem", "position": 2, "name": "GCP Mastery Path", "item": "https://learnmasterypath.com/gcp-mastery-path/"},
+      {"@type": "ListItem", "position": 3, "name": "Cheat Sheet", "item": "https://learnmasterypath.com/gcp-mastery-path/cheat-sheet/"}
+    ]
+  }
+  </script>
+  <style>
+    .md-banner a:hover { text-decoration: underline !important; }
+    .mp-related { margin-top: 2.4rem; padding-top: 1rem; border-top: 1px solid var(--md-default-fg-color--lightest); font-size: .78rem; }
+    .mp-related h2 { font-size: .9rem; margin: 0 0 .5rem; }
+    .mp-related ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem .9rem; }
+    .mp-related li { margin: 0 !important; }
+  </style>
+  <script type="application/json" id="mp-course-meta">{"home": false, "id": "gcp-mastery-path", "name": "GCP Mastery Path", "repo": "https://github.com/SIGILIPELLI/gcp-mastery-path", "src": "cheat-sheet.md", "url": "https://learnmasterypath.com/gcp-mastery-path/"}</script>
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/learn.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://learnmasterypath.com/assets/course.css?v=1">
+  <script src="https://learnmasterypath.com/assets/learn.js" defer></script>
+  <script src="https://learnmasterypath.com/assets/signup.js" defer></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gcp-cheat-sheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <a href="https://learnmasterypath.com/" style="color: inherit; text-decoration: none;">
+    &larr; Mastery Path &middot; all 100+ free courses
+  </a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/search/" style="color: inherit; text-decoration: none;">Search all courses</a>
+  <span style="opacity: .6; margin: 0 .6em;">|</span>
+  <a href="https://learnmasterypath.com/resume/" style="color: inherit; font-weight: 700; text-decoration: none;">
+    Got the skills? Free resume ATS check &rarr;
+  </a>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GCP Mastery Path" class="md-header__button md-logo" aria-label="GCP Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GCP Mastery Path
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GCP Cheat Sheet: Quick Reference, Beginner to Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/SIGILIPELLI/gcp-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gcp-mastery-path
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../interview-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Interview Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 1 · Entry
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 2 · Intermediate
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 3 · Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../level-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Level 4 · Master
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../quiz/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Quiz
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GCP Mastery Path" class="md-nav__button md-logo" aria-label="GCP Mastery Path" data-md-component="logo">
+      <svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg>
+    </a>
+    GCP Mastery Path
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/SIGILIPELLI/gcp-mastery-path" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gcp-mastery-path
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interview-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interview Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-setup-gcloud-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Setup &amp; gcloud CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-iam-security-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · IAM &amp; Security Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-compute-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Compute Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Cloud Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-vpc-networking-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · VPC Networking Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cloud-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cloud SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-cloud-functions-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Cloud Functions &amp; Cloud Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cloud-monitoring-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cloud Monitoring &amp; Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-infrastructure-as-code-terraform-on-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Infrastructure as Code (Terraform on GCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-containers-on-gcp-gke-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Containers on GCP (GKE Basics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-autoscaling-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Autoscaling &amp; Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-cloud-dns-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Cloud DNS &amp; Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-pubsub-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Pub/Sub Messaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-firestore-bigtable-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Firestore &amp; Bigtable Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-app-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · App Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-secret-manager-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Secret Manager &amp; Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cloud-cdn-cloud-armor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cloud CDN &amp; Cloud Armor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-cost-management-billing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Cost Management &amp; Billing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-scalable-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Scalable Web App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-advanced-vpc-peering-shared-vpc-interconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Advanced VPC (Peering, Shared VPC, Interconnect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-kubernetes-on-gcp-gke-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Kubernetes on GCP (GKE Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-cloud-workflows-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Cloud Workflows &amp; Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-advanced-iam-org-policies-custom-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Advanced IAM (Org Policies, Custom Roles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-terraform-on-gcp-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Terraform on GCP (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cicd-cloud-build-artifact-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · CI/CD (Cloud Build, Artifact Registry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-multi-region-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Multi-Region &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-advanced-monitoring-cloud-trace-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Advanced Monitoring (Cloud Trace &amp; Profiler)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-security-deep-dive-security-command-center-vpc-service-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Security Deep Dive (Security Command Center, VPC Service Controls)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-multi-tier-cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Multi-Tier CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-gcp-architecture-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · GCP Architecture Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-advanced-serverless-eventarc-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Advanced Serverless (Eventarc at Scale)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-data-analytics-bigquery-dataflow-dataproc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Data Analytics (BigQuery, Dataflow, Dataproc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-kubernetes-at-scale-gke-production-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Kubernetes at Scale (GKE Production Patterns)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-multi-project-strategy-organizations-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Multi-Project Strategy (Organizations, Folders)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cost-optimization-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cost Optimization at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-advanced-networking-interconnect-network-connectivity-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Advanced Networking (Interconnect, Network Connectivity Center)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-compliance-governance-assured-workloads-policy-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Compliance &amp; Governance (Assured Workloads, Policy Intelligence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-chaos-engineering-resilience-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Chaos Engineering &amp; Resilience Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 1 · Entry
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 1 · Entry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/01-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Setup & gcloud CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/02-iam-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · IAM & Security Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/03-compute-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Compute Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/04-cloud-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Cloud Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/05-vpc-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · VPC Networking Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/06-cloud-sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Cloud SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/07-serverless-run-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Cloud Functions & Cloud Run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/08-monitoring-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Cloud Monitoring & Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/09-terraform-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Infrastructure as Code (Terraform on GCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-1/10-capstone-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 2 · Intermediate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 2 · Intermediate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/01-gke-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Containers on GCP (GKE Basics)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/02-autoscaling-load-balancing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Autoscaling & Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/03-cloud-dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Cloud DNS & Domains
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/04-pubsub-messaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Pub/Sub Messaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/05-firestore-bigtable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Firestore & Bigtable Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/06-app-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · App Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/07-secret-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Secret Manager & Config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/08-cloud-cdn-armor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Cloud CDN & Cloud Armor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/09-cost-management-billing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Cost Management & Billing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-2/10-project-scalable-web-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Scalable Web App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 3 · Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 3 · Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/01-advanced-vpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Advanced VPC (Peering, Shared VPC, Interconnect)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/02-gke-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Kubernetes on GCP (GKE Advanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/03-workflows-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Cloud Workflows & Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/04-advanced-iam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Advanced IAM (Org Policies, Custom Roles)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/05-terraform-on-gcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Terraform on GCP (Advanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/06-cicd-cloud-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · CI/CD (Cloud Build, Artifact Registry)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/07-multi-region-disaster-recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Multi-Region & Disaster Recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/08-advanced-monitoring-trace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Advanced Monitoring (Cloud Trace & Profiler)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/09-security-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Security Deep Dive (Security Command Center, VPC Service Controls)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-3/10-project-cicd-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Project — Multi-Tier CI/CD Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../level-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 4 · Master
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Level 4 · Master
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/01-architecture-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · GCP Architecture Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/02-advanced-serverless-eventarc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Advanced Serverless (Eventarc at Scale)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/03-data-analytics-bigquery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Data Analytics (BigQuery, Dataflow, Dataproc)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/04-gke-at-scale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Kubernetes at Scale (GKE Production Patterns)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/05-multi-project-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Multi-Project Strategy (Organizations, Folders)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/06-cost-optimization-at-scale/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Cost Optimization at Scale
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/07-advanced-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Advanced Networking (Interconnect, Network Connectivity Center)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/08-compliance-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Compliance & Governance (Assured Workloads, Policy Intelligence)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/09-chaos-engineering-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Chaos Engineering & Resilience Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../level-4/10-capstone-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Capstone Project — Production-Grade Cloud Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Final Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#level-1-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 1 · Entry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 1 · Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-setup-gcloud-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Setup &amp; gcloud CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-iam-security-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · IAM &amp; Security Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-compute-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Compute Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Cloud Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-vpc-networking-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · VPC Networking Basics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cloud-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cloud SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-cloud-functions-cloud-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Cloud Functions &amp; Cloud Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cloud-monitoring-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cloud Monitoring &amp; Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-infrastructure-as-code-terraform-on-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Infrastructure as Code (Terraform on GCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Capstone Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2-intermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2 · Intermediate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2 · Intermediate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-containers-on-gcp-gke-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Containers on GCP (GKE Basics)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-autoscaling-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Autoscaling &amp; Load Balancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-cloud-dns-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Cloud DNS &amp; Domains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-pubsub-messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Pub/Sub Messaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-firestore-bigtable-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Firestore &amp; Bigtable Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-app-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · App Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-secret-manager-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Secret Manager &amp; Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-cloud-cdn-cloud-armor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Cloud CDN &amp; Cloud Armor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-cost-management-billing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Cost Management &amp; Billing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-scalable-web-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Scalable Web App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 3 · Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3 · Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-advanced-vpc-peering-shared-vpc-interconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · Advanced VPC (Peering, Shared VPC, Interconnect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-kubernetes-on-gcp-gke-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Kubernetes on GCP (GKE Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-cloud-workflows-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Cloud Workflows &amp; Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-advanced-iam-org-policies-custom-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Advanced IAM (Org Policies, Custom Roles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-terraform-on-gcp-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Terraform on GCP (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cicd-cloud-build-artifact-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · CI/CD (Cloud Build, Artifact Registry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-multi-region-disaster-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Multi-Region &amp; Disaster Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-advanced-monitoring-cloud-trace-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Advanced Monitoring (Cloud Trace &amp; Profiler)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-security-deep-dive-security-command-center-vpc-service-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Security Deep Dive (Security Command Center, VPC Service Controls)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-project-multi-tier-cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10 · Project — Multi-Tier CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-4-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 4 · Master
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 4 · Master">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-gcp-architecture-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        01 · GCP Architecture Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-advanced-serverless-eventarc-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        02 · Advanced Serverless (Eventarc at Scale)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-data-analytics-bigquery-dataflow-dataproc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        03 · Data Analytics (BigQuery, Dataflow, Dataproc)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#04-kubernetes-at-scale-gke-production-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        04 · Kubernetes at Scale (GKE Production Patterns)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#05-multi-project-strategy-organizations-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        05 · Multi-Project Strategy (Organizations, Folders)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#06-cost-optimization-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        06 · Cost Optimization at Scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#07-advanced-networking-interconnect-network-connectivity-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        07 · Advanced Networking (Interconnect, Network Connectivity Center)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#08-compliance-governance-assured-workloads-policy-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        08 · Compliance &amp; Governance (Assured Workloads, Policy Intelligence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#09-chaos-engineering-resilience-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        09 · Chaos Engineering &amp; Resilience Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+  
+  
+
+
+<h1 id="gcp-cheat-sheet">GCP Cheat Sheet<a class="headerlink" href="#gcp-cheat-sheet" title="Permanent link">&para;</a></h1>
+<p>Quick-reference tables from <strong>39 lessons</strong> of the free GCP Mastery Path, in course order from beginner to advanced. Each section links to the full lesson with explanations and runnable examples.</p>
+<h2 id="level-1-entry">Level 1 · Entry<a class="headerlink" href="#level-1-entry" title="Permanent link">&para;</a></h2>
+<h3 id="01-setup-gcloud-cli"><a href="../level-1/01-setup/">01 · Setup &amp; gcloud CLI</a><a class="headerlink" href="#01-setup-gcloud-cli" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud init</code></td>
+<td>Interactive first-time setup (account, project, region/zone).</td>
+</tr>
+<tr>
+<td><code>gcloud auth login</code></td>
+<td>Authenticate the CLI to a Google account.</td>
+</tr>
+<tr>
+<td><code>gcloud auth application-default login</code></td>
+<td>Set up ADC for client libraries and Terraform.</td>
+</tr>
+<tr>
+<td><code>gcloud config set project &lt;id&gt;</code></td>
+<td>Set the active default project.</td>
+</tr>
+<tr>
+<td><code>gcloud config list</code></td>
+<td>Show current CLI configuration.</td>
+</tr>
+<tr>
+<td><code>gcloud projects create &lt;id&gt;</code></td>
+<td>Create a new project from the CLI.</td>
+</tr>
+<tr>
+<td><code>gcloud billing projects link &lt;id&gt; --billing-account=&lt;acct&gt;</code></td>
+<td>Attach billing to a project.</td>
+</tr>
+<tr>
+<td><code>gcloud services enable &lt;api&gt;</code></td>
+<td>Turn on a GCP API for the current project.</td>
+</tr>
+<tr>
+<td><code>gcloud services list --enabled</code></td>
+<td>List APIs enabled on the current project.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-iam-security-basics"><a href="../level-1/02-iam-security/">02 · IAM &amp; Security Basics</a><a class="headerlink" href="#02-iam-security-basics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud projects add-iam-policy-binding</code></td>
+<td>Grant a role to a member on a project.</td>
+</tr>
+<tr>
+<td><code>gcloud projects remove-iam-policy-binding</code></td>
+<td>Revoke a role from a member.</td>
+</tr>
+<tr>
+<td><code>gcloud projects get-iam-policy</code></td>
+<td>View the current IAM policy.</td>
+</tr>
+<tr>
+<td><code>gcloud iam roles list</code></td>
+<td>List available (predefined/custom) roles.</td>
+</tr>
+<tr>
+<td><code>gcloud iam roles describe &lt;role&gt;</code></td>
+<td>See exactly what permissions a role grants.</td>
+</tr>
+<tr>
+<td><code>gcloud iam service-accounts create</code></td>
+<td>Create a new service account.</td>
+</tr>
+<tr>
+<td><code>gcloud iam service-accounts keys create</code></td>
+<td>Generate a key file for a service account (use sparingly).</td>
+</tr>
+<tr>
+<td><code>gcloud iam service-accounts keys delete</code></td>
+<td>Revoke a service account key.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-compute-engine"><a href="../level-1/03-compute-engine/">03 · Compute Engine</a><a class="headerlink" href="#03-compute-engine" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute instances create</code></td>
+<td>Create a new VM.</td>
+</tr>
+<tr>
+<td><code>gcloud compute instances list</code></td>
+<td>List VMs and their status.</td>
+</tr>
+<tr>
+<td><code>gcloud compute instances describe</code></td>
+<td>Show full detail on one VM.</td>
+</tr>
+<tr>
+<td><code>gcloud compute instances stop/start</code></td>
+<td>Stop or start a VM (disk billing continues while stopped).</td>
+</tr>
+<tr>
+<td><code>gcloud compute instances delete</code></td>
+<td>Permanently delete a VM (and by default its disks).</td>
+</tr>
+<tr>
+<td><code>gcloud compute ssh &lt;name&gt;</code></td>
+<td>SSH in, auto-handling key setup.</td>
+</tr>
+<tr>
+<td><code>gcloud compute firewall-rules create</code></td>
+<td>Allow (or deny) traffic to matching instances.</td>
+</tr>
+<tr>
+<td><code>gcloud compute firewall-rules list</code></td>
+<td>List firewall rules on a network.</td>
+</tr>
+<tr>
+<td><code>--metadata=startup-script=...</code></td>
+<td>Run a script automatically on first boot.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-cloud-storage"><a href="../level-1/04-cloud-storage/">04 · Cloud Storage</a><a class="headerlink" href="#04-cloud-storage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud storage buckets create gs://&lt;name&gt;</code></td>
+<td>Create a bucket.</td>
+</tr>
+<tr>
+<td><code>gcloud storage cp</code></td>
+<td>Upload/download/copy objects.</td>
+</tr>
+<tr>
+<td><code>gcloud storage rsync</code></td>
+<td>Sync a local directory and a bucket path.</td>
+</tr>
+<tr>
+<td><code>gcloud storage ls</code></td>
+<td>List buckets or objects.</td>
+</tr>
+<tr>
+<td><code>gcloud storage rm</code></td>
+<td>Delete objects (<code>--recursive</code> for a whole prefix).</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets update --lifecycle-file=</code></td>
+<td>Set an automated class-transition/expiry policy.</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets add-iam-policy-binding</code></td>
+<td>Grant access to a bucket.</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets update --web-main-page-suffix=</code></td>
+<td>Enable static website hosting on a bucket.</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets delete</code></td>
+<td>Permanently delete an (empty) bucket.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-vpc-networking-basics"><a href="../level-1/05-vpc-networking/">05 · VPC Networking Basics</a><a class="headerlink" href="#05-vpc-networking-basics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute networks create --subnet-mode=custom</code></td>
+<td>Create a VPC with no auto-created subnets.</td>
+</tr>
+<tr>
+<td><code>gcloud compute networks subnets create</code></td>
+<td>Create a regional subnet inside a VPC.</td>
+</tr>
+<tr>
+<td><code>gcloud compute firewall-rules create</code></td>
+<td>Allow/deny traffic by tag, service account, or range.</td>
+</tr>
+<tr>
+<td><code>gcloud compute routes list/create</code></td>
+<td>View or add routes for a VPC.</td>
+</tr>
+<tr>
+<td><code>gcloud compute routers create</code> / <code>nats create</code></td>
+<td>Set up Cloud NAT for outbound-only internet access.</td>
+</tr>
+<tr>
+<td><code>--no-address</code> (on <code>instances create</code>)</td>
+<td>Launch a VM with no external IP.</td>
+</tr>
+<tr>
+<td><code>gcloud compute networks delete</code></td>
+<td>Delete a VPC (must delete its subnets/rules first).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-cloud-sql"><a href="../level-1/06-cloud-sql/">06 · Cloud SQL</a><a class="headerlink" href="#06-cloud-sql" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud sql instances create</code></td>
+<td>Create a managed database instance.</td>
+</tr>
+<tr>
+<td><code>gcloud sql instances list/describe</code></td>
+<td>View instance status and connection info.</td>
+</tr>
+<tr>
+<td><code>gcloud sql databases create</code></td>
+<td>Create a logical database on an instance.</td>
+</tr>
+<tr>
+<td><code>gcloud sql users create</code></td>
+<td>Create a database user.</td>
+</tr>
+<tr>
+<td><code>gcloud sql instances patch --authorized-networks=</code></td>
+<td>Allow a specific IP for public-IP connections.</td>
+</tr>
+<tr>
+<td><code>cloud-sql-proxy</code></td>
+<td>Local/app-side proxy authenticating via IAM, no IP allowlisting.</td>
+</tr>
+<tr>
+<td><code>--add-cloudsql-instances</code> (Cloud Run/Functions)</td>
+<td>Wire serverless compute to a Cloud SQL instance via Unix socket.</td>
+</tr>
+<tr>
+<td><code>gcloud sql backups create/list/restore</code></td>
+<td>Manage on-demand and automated backups.</td>
+</tr>
+<tr>
+<td><code>gcloud sql instances delete</code></td>
+<td>Permanently delete an instance and its data.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-cloud-functions-cloud-run"><a href="../level-1/07-serverless-run-functions/">07 · Cloud Functions &amp; Cloud Run</a><a class="headerlink" href="#07-cloud-functions-cloud-run" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud functions deploy --gen2 --trigger-http</code></td>
+<td>Deploy an HTTP-triggered function.</td>
+</tr>
+<tr>
+<td><code>gcloud functions deploy --trigger-bucket=</code></td>
+<td>Deploy a function triggered by Cloud Storage events.</td>
+</tr>
+<tr>
+<td><code>gcloud functions call</code></td>
+<td>Invoke a function directly (for non-HTTP or quick tests).</td>
+</tr>
+<tr>
+<td><code>gcloud run deploy --source=.</code></td>
+<td>Build (via Cloud Build) and deploy a container from source.</td>
+</tr>
+<tr>
+<td><code>gcloud run deploy --image=</code></td>
+<td>Deploy a pre-built container image.</td>
+</tr>
+<tr>
+<td><code>gcloud run services update --min-instances/--max-instances</code></td>
+<td>Tune scaling behavior.</td>
+</tr>
+<tr>
+<td><code>gcloud run services describe --format='value(status.url)'</code></td>
+<td>Get a service's public URL.</td>
+</tr>
+<tr>
+<td><code>gcloud functions delete</code> / <code>gcloud run services delete</code></td>
+<td>Tear down.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-cloud-monitoring-logging"><a href="../level-1/08-monitoring-logging/">08 · Cloud Monitoring &amp; Logging</a><a class="headerlink" href="#08-cloud-monitoring-logging" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud logging read '&lt;filter&gt;'</code></td>
+<td>Query logs from any resource.</td>
+</tr>
+<tr>
+<td><code>gcloud logging metrics create</code></td>
+<td>Turn a log filter into a chartable/alertable metric.</td>
+</tr>
+<tr>
+<td><code>gcloud monitoring dashboards list</code></td>
+<td>List Monitoring dashboards.</td>
+</tr>
+<tr>
+<td><code>gcloud monitoring time-series list</code></td>
+<td>Query raw metric data from the CLI.</td>
+</tr>
+<tr>
+<td><code>gcloud alpha monitoring channels create</code></td>
+<td>Create a notification channel (email, SMS, Slack, etc.).</td>
+</tr>
+<tr>
+<td><code>gcloud alpha monitoring policies create --policy-from-file=</code></td>
+<td>Create an alerting policy from YAML/JSON.</td>
+</tr>
+<tr>
+<td><code>gcloud monitoring uptime create</code></td>
+<td>Add an external uptime check for a URL.</td>
+</tr>
+<tr>
+<td><code>severity&gt;=ERROR</code></td>
+<td>Log filter fragment for errors and above.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-infrastructure-as-code-terraform-on-gcp"><a href="../level-1/09-terraform-intro/">09 · Infrastructure as Code (Terraform on GCP)</a><a class="headerlink" href="#09-infrastructure-as-code-terraform-on-gcp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>terraform init</code></td>
+<td>Download providers, set up the working directory.</td>
+</tr>
+<tr>
+<td><code>terraform plan</code></td>
+<td>Preview changes without applying them.</td>
+</tr>
+<tr>
+<td><code>terraform apply</code></td>
+<td>Create/update resources to match the config.</td>
+</tr>
+<tr>
+<td><code>terraform destroy</code></td>
+<td>Delete every resource the config manages.</td>
+</tr>
+<tr>
+<td><code>terraform output</code></td>
+<td>Print declared output values.</td>
+</tr>
+<tr>
+<td><code>terraform state list</code></td>
+<td>List resources tracked in the current state.</td>
+</tr>
+<tr>
+<td><code>resource "google_X" "name" { ... }</code></td>
+<td>Declare a GCP resource.</td>
+</tr>
+<tr>
+<td><code>var.name</code> / <code>variable "name" {}</code></td>
+<td>Parameterize a configuration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-capstone-project"><a href="../level-1/10-capstone-project/">10 · Capstone Project</a><a class="headerlink" href="#10-capstone-project" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud sql instances create/delete</code></td>
+<td>Provision/remove the database — highest ongoing cost, delete first priority.</td>
+</tr>
+<tr>
+<td><code>gcloud run deploy --source=. --add-cloudsql-instances=</code></td>
+<td>Deploy the API wired to Cloud SQL.</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets create --uniform-bucket-level-access</code></td>
+<td>Create the frontend bucket.</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets update --web-main-page-suffix=</code></td>
+<td>Enable static website serving.</td>
+</tr>
+<tr>
+<td><code>gcloud run services delete</code></td>
+<td>Tear down the backend.</td>
+</tr>
+<tr>
+<td><code>gcloud storage buckets delete</code></td>
+<td>Tear down the frontend bucket (must be empty first).</td>
+</tr>
+<tr>
+<td><code>gcloud sql instances list</code> / <code>gcloud run services list</code></td>
+<td>Verify teardown left nothing running.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-2-intermediate">Level 2 · Intermediate<a class="headerlink" href="#level-2-intermediate" title="Permanent link">&para;</a></h2>
+<h3 id="01-containers-on-gcp-gke-basics"><a href="../level-2/01-gke-containers/">01 · Containers on GCP (GKE Basics)</a><a class="headerlink" href="#01-containers-on-gcp-gke-basics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud container clusters create-auto</code></td>
+<td>Create an Autopilot cluster (Google manages nodes).</td>
+</tr>
+<tr>
+<td><code>gcloud container clusters get-credentials</code></td>
+<td>Write cluster credentials into local kubeconfig for <code>kubectl</code>.</td>
+</tr>
+<tr>
+<td><code>kubectl apply -f &lt;file&gt;.yaml</code></td>
+<td>Create/update resources from a manifest.</td>
+</tr>
+<tr>
+<td><code>kubectl get pods</code> / <code>get service</code> / <code>get nodes</code></td>
+<td>Inspect cluster state.</td>
+</tr>
+<tr>
+<td><code>kubectl scale deployment &lt;name&gt; --replicas=N</code></td>
+<td>Manually change replica count.</td>
+</tr>
+<tr>
+<td><code>kubectl autoscale deployment &lt;name&gt; --min --max --cpu-percent</code></td>
+<td>Attach a Horizontal Pod Autoscaler.</td>
+</tr>
+<tr>
+<td><code>kubectl set image deployment/&lt;name&gt; &lt;container&gt;=&lt;image&gt;</code></td>
+<td>Roll out a new image version.</td>
+</tr>
+<tr>
+<td><code>kubectl rollout status</code> / <code>rollout undo</code></td>
+<td>Watch or reverse a rollout.</td>
+</tr>
+<tr>
+<td><code>gcloud container clusters delete</code></td>
+<td>Tear down the cluster (control plane + nodes).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-autoscaling-load-balancing"><a href="../level-2/02-autoscaling-load-balancing/">02 · Autoscaling &amp; Load Balancing</a><a class="headerlink" href="#02-autoscaling-load-balancing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute instance-templates create</code></td>
+<td>Define the VM stamp a MIG uses.</td>
+</tr>
+<tr>
+<td><code>gcloud compute instance-groups managed create --region=</code></td>
+<td>Create a regional MIG from a template.</td>
+</tr>
+<tr>
+<td><code>gcloud compute instance-groups managed set-autoscaling</code></td>
+<td>Attach min/max replicas and a scaling signal.</td>
+</tr>
+<tr>
+<td><code>gcloud compute health-checks create http</code></td>
+<td>Define how the LB decides an instance is healthy.</td>
+</tr>
+<tr>
+<td><code>gcloud compute backend-services create/add-backend</code></td>
+<td>Define where traffic goes and attach a MIG.</td>
+</tr>
+<tr>
+<td><code>gcloud compute url-maps create</code></td>
+<td>Define routing rules from host/path to backend service.</td>
+</tr>
+<tr>
+<td><code>gcloud compute target-http-proxies create</code></td>
+<td>Terminate the incoming protocol, hand off to the URL map.</td>
+</tr>
+<tr>
+<td><code>gcloud compute forwarding-rules create --global</code></td>
+<td>Bind a public IP + port to the proxy.</td>
+</tr>
+<tr>
+<td><code>gcloud compute backend-services get-health</code></td>
+<td>Check per-instance health as seen by the LB.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-cloud-dns-domains"><a href="../level-2/03-cloud-dns/">03 · Cloud DNS &amp; Domains</a><a class="headerlink" href="#03-cloud-dns-domains" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud dns managed-zones create --dns-name=</code></td>
+<td>Create a public/private zone for a domain.</td>
+</tr>
+<tr>
+<td><code>gcloud dns managed-zones describe --format="value(nameServers)"</code></td>
+<td>Get the four name servers to configure at the registrar.</td>
+</tr>
+<tr>
+<td><code>gcloud dns record-sets transaction start/add/remove/execute</code></td>
+<td>Atomically change records in a zone.</td>
+</tr>
+<tr>
+<td><code>gcloud dns record-sets list</code></td>
+<td>List all records in a zone.</td>
+</tr>
+<tr>
+<td><code>gcloud dns managed-zones update --dnssec-state=on</code></td>
+<td>Enable DNSSEC signing.</td>
+</tr>
+<tr>
+<td><code>dig &lt;name&gt; &lt;type&gt; +short</code></td>
+<td>Query DNS directly to verify what's published.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-pubsub-messaging"><a href="../level-2/04-pubsub-messaging/">04 · Pub/Sub Messaging</a><a class="headerlink" href="#04-pubsub-messaging" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud pubsub topics create</code></td>
+<td>Create a message channel.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub subscriptions create --topic=</code></td>
+<td>Attach a pull subscription to a topic.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub subscriptions create --push-endpoint=</code></td>
+<td>Attach a push (HTTP) subscription.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub topics publish --message=</code></td>
+<td>Publish a message.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub subscriptions pull --auto-ack</code></td>
+<td>Pull and acknowledge messages manually.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub subscriptions update --dead-letter-topic=</code></td>
+<td>Route repeatedly-failed messages to a DLQ.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub subscriptions create --enable-message-ordering</code></td>
+<td>Guarantee per-ordering-key delivery order.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-firestore-bigtable-deep-dive"><a href="../level-2/05-firestore-bigtable/">05 · Firestore &amp; Bigtable Deep Dive</a><a class="headerlink" href="#05-firestore-bigtable-deep-dive" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud firestore databases create --type=firestore-native</code></td>
+<td>Provision the (one-time, permanent) Firestore mode.</td>
+</tr>
+<tr>
+<td><code>gcloud firestore export gs://&lt;bucket&gt;/&lt;path&gt;</code></td>
+<td>Back up Firestore data to Cloud Storage.</td>
+</tr>
+<tr>
+<td><code>gcloud firestore indexes composite create</code></td>
+<td>Declare a multi-field composite index.</td>
+</tr>
+<tr>
+<td><code>gcloud bigtable instances create --cluster-config=</code></td>
+<td>Provision a Bigtable instance and its first cluster.</td>
+</tr>
+<tr>
+<td><code>cbt createtable</code> / <code>createfamily</code></td>
+<td>Create a table and column family.</td>
+</tr>
+<tr>
+<td><code>cbt set</code> / <code>read</code></td>
+<td>Write/read rows via the Bigtable-specific CLI.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-app-engine"><a href="../level-2/06-app-engine/">06 · App Engine</a><a class="headerlink" href="#06-app-engine" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud app create --region=</code></td>
+<td>One-time creation of the App Engine application.</td>
+</tr>
+<tr>
+<td><code>gcloud app deploy app.yaml</code></td>
+<td>Deploy a new version (promotes to 100% traffic by default).</td>
+</tr>
+<tr>
+<td><code>gcloud app deploy --version= --no-promote</code></td>
+<td>Deploy without shifting traffic (for canaries).</td>
+</tr>
+<tr>
+<td><code>gcloud app services set-traffic --splits=</code></td>
+<td>Split traffic between versions by percentage.</td>
+</tr>
+<tr>
+<td><code>gcloud app versions list</code> / <code>delete</code></td>
+<td>Inspect and remove old versions.</td>
+</tr>
+<tr>
+<td><code>gcloud app services list</code> / <code>delete</code></td>
+<td>Inspect and remove services.</td>
+</tr>
+<tr>
+<td><code>gcloud app deploy cron.yaml</code></td>
+<td>Deploy scheduled tasks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-secret-manager-config"><a href="../level-2/07-secret-manager/">07 · Secret Manager &amp; Config</a><a class="headerlink" href="#07-secret-manager-config" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud secrets create --data-file=-</code></td>
+<td>Create a secret from stdin.</td>
+</tr>
+<tr>
+<td><code>gcloud secrets versions add --data-file=-</code></td>
+<td>Add a new version (rotate a value).</td>
+</tr>
+<tr>
+<td><code>gcloud secrets versions access latest</code></td>
+<td>Read the current value.</td>
+</tr>
+<tr>
+<td><code>gcloud secrets versions disable &lt;n&gt;</code></td>
+<td>Revoke access to an old version without deleting it.</td>
+</tr>
+<tr>
+<td><code>gcloud secrets add-iam-policy-binding --role=roles/secretmanager.secretAccessor</code></td>
+<td>Grant read-only access to a specific identity.</td>
+</tr>
+<tr>
+<td><code>gcloud run deploy --set-secrets="ENV=secret:version"</code></td>
+<td>Mount a secret as an env var in Cloud Run.</td>
+</tr>
+<tr>
+<td><code>gcloud secrets delete</code></td>
+<td>Permanently delete a secret and all its versions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-cloud-cdn-cloud-armor"><a href="../level-2/08-cloud-cdn-armor/">08 · Cloud CDN &amp; Cloud Armor</a><a class="headerlink" href="#08-cloud-cdn-cloud-armor" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute backend-services update --enable-cdn</code></td>
+<td>Turn on CDN caching for a backend.</td>
+</tr>
+<tr>
+<td><code>gcloud compute url-maps invalidate-cdn-cache --path=</code></td>
+<td>Force-expire cached objects by path.</td>
+</tr>
+<tr>
+<td><code>gcloud compute security-policies create</code></td>
+<td>Create a Cloud Armor policy.</td>
+</tr>
+<tr>
+<td><code>gcloud compute security-policies rules create &lt;priority&gt;</code></td>
+<td>Add an allow/deny/rate-limit rule.</td>
+</tr>
+<tr>
+<td><code>evaluatePreconfiguredExpr('sqli-stable')</code></td>
+<td>Use Google's built-in WAF rule sets in an expression.</td>
+</tr>
+<tr>
+<td><code>gcloud compute backend-services update --security-policy=</code></td>
+<td>Attach a Cloud Armor policy to a backend.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-cost-management-billing"><a href="../level-2/09-cost-management-billing/">09 · Cost Management &amp; Billing</a><a class="headerlink" href="#09-cost-management-billing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud billing projects describe</code></td>
+<td>Confirm which billing account a project is linked to.</td>
+</tr>
+<tr>
+<td><code>gcloud billing budgets create --threshold-rule=percent=</code></td>
+<td>Create a budget with alert thresholds.</td>
+</tr>
+<tr>
+<td><code>--all-updates-rule-pubsub-topic=</code></td>
+<td>Wire budget alerts to Pub/Sub for automation.</td>
+</tr>
+<tr>
+<td><code>--labels=key=value</code> (on most <code>create</code> commands)</td>
+<td>Tag resources for cost attribution.</td>
+</tr>
+<tr>
+<td><code>bq mk --dataset</code></td>
+<td>Create the BigQuery dataset billing export writes into.</td>
+</tr>
+<tr>
+<td><code>gcloud recommender recommendations list</code></td>
+<td>Get machine-generated cost/right-sizing suggestions.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-project-scalable-web-app"><a href="../level-2/10-project-scalable-web-app/">10 · Project — Scalable Web App</a><a class="headerlink" href="#10-project-scalable-web-app" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud container clusters create-auto</code></td>
+<td>Provision the GKE Autopilot cluster hosting both services.</td>
+</tr>
+<tr>
+<td>Workload Identity binding + KSA annotation</td>
+<td>Let pods authenticate to Firestore/Pub/Sub with no key files.</td>
+</tr>
+<tr>
+<td><code>gcloud pubsub subscriptions create --dead-letter-topic=</code></td>
+<td>Make the async fulfillment path failure-safe.</td>
+</tr>
+<tr>
+<td><code>kubectl apply -f orders-ingress.yaml</code> (with <code>ManagedCertificate</code>)</td>
+<td>Provision the global LB + managed TLS cert from GKE.</td>
+</tr>
+<tr>
+<td><code>gcloud compute backend-services update --enable-cdn --security-policy=</code></td>
+<td>Attach CDN + Cloud Armor to the Ingress-managed backend.</td>
+</tr>
+<tr>
+<td><code>gcloud dns record-sets transaction ...</code></td>
+<td>Point the custom domain at the load balancer's IP.</td>
+</tr>
+<tr>
+<td><code>gcloud billing budgets create</code></td>
+<td>Guardrail the whole stack's spend.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-3-advanced">Level 3 · Advanced<a class="headerlink" href="#level-3-advanced" title="Permanent link">&para;</a></h2>
+<h3 id="01-advanced-vpc-peering-shared-vpc-interconnect"><a href="../level-3/01-advanced-vpc/">01 · Advanced VPC (Peering, Shared VPC, Interconnect)</a><a class="headerlink" href="#01-advanced-vpc-peering-shared-vpc-interconnect" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command / Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute networks peerings create</code></td>
+<td>Direct VPC-to-VPC connectivity (must be created both sides).</td>
+</tr>
+<tr>
+<td>Shared VPC host/service project</td>
+<td>Centralize network admin; teams deploy into shared subnets.</td>
+</tr>
+<tr>
+<td><code>roles/compute.networkUser</code> + IAM condition</td>
+<td>Restrict a team to one specific shared subnet.</td>
+</tr>
+<tr>
+<td>Dedicated Interconnect</td>
+<td>High-bandwidth, direct physical on-prem link.</td>
+</tr>
+<tr>
+<td>Partner Interconnect</td>
+<td>Lower-minimum, provider-mediated on-prem link.</td>
+</tr>
+<tr>
+<td>Cloud Router (BGP)</td>
+<td>Dynamic route exchange for Interconnect/VPN.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-kubernetes-on-gcp-gke-advanced"><a href="../level-3/02-gke-advanced/">02 · Kubernetes on GCP (GKE Advanced)</a><a class="headerlink" href="#02-kubernetes-on-gcp-gke-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud container node-pools create --spot</code></td>
+<td>Add a cost-optimized, preemptible node pool.</td>
+</tr>
+<tr>
+<td><code>--workload-pool=PROJECT.svc.id.goog</code></td>
+<td>Enable Workload Identity on a cluster.</td>
+</tr>
+<tr>
+<td><code>iam.gke.io/gcp-service-account</code> annotation</td>
+<td>Bind a KSA to a GSA for pod-level auth.</td>
+</tr>
+<tr>
+<td><code>kubectl autoscale deployment</code></td>
+<td>Configure HPA for a deployment.</td>
+</tr>
+<tr>
+<td><code>gcloud container clusters update --enable-autoscaling</code></td>
+<td>Configure cluster (node) autoscaling.</td>
+</tr>
+<tr>
+<td><code>gcloud container fleet memberships register</code></td>
+<td>Join a cluster to a fleet for multi-cluster features.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-cloud-workflows-orchestration"><a href="../level-3/03-workflows-orchestration/">03 · Cloud Workflows &amp; Orchestration</a><a class="headerlink" href="#03-cloud-workflows-orchestration" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud workflows deploy</code></td>
+<td>Create/update a workflow from a YAML/JSON source file.</td>
+</tr>
+<tr>
+<td><code>gcloud workflows execute</code></td>
+<td>Run a workflow with input data.</td>
+</tr>
+<tr>
+<td><code>gcloud workflows executions describe</code></td>
+<td>Check status/result of a specific execution.</td>
+</tr>
+<tr>
+<td><code>try</code> / <code>retry</code> / <code>except</code></td>
+<td>Built-in per-step retry and error-handling.</td>
+</tr>
+<tr>
+<td><code>http.default_retry_predicate</code></td>
+<td>Standard retry-on-5xx/429 policy.</td>
+</tr>
+<tr>
+<td><code>roles/run.invoker</code> on the workflow's SA</td>
+<td>Required to call a private Cloud Run service.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-advanced-iam-org-policies-custom-roles"><a href="../level-3/04-advanced-iam/">04 · Advanced IAM (Org Policies, Custom Roles)</a><a class="headerlink" href="#04-advanced-iam-org-policies-custom-roles" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud iam roles create</code></td>
+<td>Define a custom role with an exact permission set.</td>
+</tr>
+<tr>
+<td><code>gcloud org-policies set-policy</code></td>
+<td>Apply a constraint at org/folder/project scope.</td>
+</tr>
+<tr>
+<td><code>gcloud org-policies describe</code></td>
+<td>Check the effective policy for a constraint on a resource.</td>
+</tr>
+<tr>
+<td><code>gcloud iam deny-policies create</code></td>
+<td>Create a hard deny that overrides any Allow binding.</td>
+</tr>
+<tr>
+<td><code>--stage=TESTING</code></td>
+<td>Mark a custom role as provisional during tuning.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-terraform-on-gcp-advanced"><a href="../level-3/05-terraform-on-gcp/">05 · Terraform on GCP (Advanced)</a><a class="headerlink" href="#05-terraform-on-gcp-advanced" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>backend "gcs" {}</code></td>
+<td>Store state remotely with locking.</td>
+</tr>
+<tr>
+<td><code>terraform force-unlock</code></td>
+<td>Recover from a stuck state lock (verify no live apply first).</td>
+</tr>
+<tr>
+<td><code>module "x" { source = ... }</code></td>
+<td>Reuse a parameterized resource bundle.</td>
+</tr>
+<tr>
+<td><code>terraform init -upgrade</code></td>
+<td>Pick up a changed module source.</td>
+</tr>
+<tr>
+<td><code>terraform workspace new/select</code></td>
+<td>Separate state per environment within one backend.</td>
+</tr>
+<tr>
+<td><code>terraform import RESOURCE ID</code></td>
+<td>Bring an existing GCP resource under Terraform management.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-cicd-cloud-build-artifact-registry"><a href="../level-3/06-cicd-cloud-build/">06 · CI/CD (Cloud Build, Artifact Registry)</a><a class="headerlink" href="#06-cicd-cloud-build-artifact-registry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud builds submit --config=</code></td>
+<td>Run a build manually from local source.</td>
+</tr>
+<tr>
+<td><code>gcloud builds triggers create github</code></td>
+<td>Auto-run a build config on push/PR.</td>
+</tr>
+<tr>
+<td><code>$SHORT_SHA</code>, <code>$PROJECT_ID</code></td>
+<td>Built-in substitutions for commit-based tagging.</td>
+</tr>
+<tr>
+<td><code>roles/run.admin</code> + <code>roles/iam.serviceAccountUser</code> on Cloud Build SA</td>
+<td>Required for a build step to deploy to Cloud Run.</td>
+</tr>
+<tr>
+<td><code>gcloud artifacts repositories create</code></td>
+<td>Create a regional image/package repo.</td>
+</tr>
+<tr>
+<td><code>--require-approval</code> / <code>gcloud builds approve</code></td>
+<td>Manual gate before a pipeline proceeds.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-multi-region-disaster-recovery"><a href="../level-3/07-multi-region-disaster-recovery/">07 · Multi-Region &amp; Disaster Recovery</a><a class="headerlink" href="#07-multi-region-disaster-recovery" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud sql instances create --master-instance-name=</code></td>
+<td>Create a cross-region Cloud SQL read replica.</td>
+</tr>
+<tr>
+<td><code>gcloud sql instances promote-replica</code></td>
+<td>Failover: promote a replica to an independent primary (one-way).</td>
+</tr>
+<tr>
+<td><code>gcloud spanner instances create --config=nam3</code></td>
+<td>Multi-region Spanner with automatic synchronous failover.</td>
+</tr>
+<tr>
+<td><code>gcloud compute backend-services add-backend --instance-group-region=</code></td>
+<td>Add a regional backend to a global LB.</td>
+</tr>
+<tr>
+<td><code>gcloud compute backend-services get-health</code></td>
+<td>Check per-backend health across regions.</td>
+</tr>
+<tr>
+<td>Game-day: <code>remove-backend</code> then re-add</td>
+<td>Rehearse failover without a real outage.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-advanced-monitoring-cloud-trace-profiler"><a href="../level-3/08-advanced-monitoring-trace/">08 · Advanced Monitoring (Cloud Trace &amp; Profiler)</a><a class="headerlink" href="#08-advanced-monitoring-cloud-trace-profiler" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command / Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud services enable cloudtrace.googleapis.com</code></td>
+<td>Turn on distributed tracing collection.</td>
+</tr>
+<tr>
+<td>OpenTelemetry <code>CloudTraceSpanExporter</code></td>
+<td>Standard instrumentation path for GCP-supported languages.</td>
+</tr>
+<tr>
+<td><code>gcloud trace traces list</code></td>
+<td>List recent traces and their overall latency.</td>
+</tr>
+<tr>
+<td><code>googlecloudprofiler.start()</code></td>
+<td>Enable continuous CPU/heap profiling for a service.</td>
+</tr>
+<tr>
+<td><code>gcloud monitoring services create</code> + <code>slo create</code></td>
+<td>Define an SLO and track error-budget burn.</td>
+</tr>
+<tr>
+<td>Alert on burn <em>rate</em>, not raw threshold</td>
+<td>Reduces noisy paging on brief blips.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-security-deep-dive-security-command-center-vpc-service-controls"><a href="../level-3/09-security-deep-dive/">09 · Security Deep Dive (Security Command Center, VPC Service Controls)</a><a class="headerlink" href="#09-security-deep-dive-security-command-center-vpc-service-controls" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud scc findings list</code></td>
+<td>List active security findings org-wide.</td>
+</tr>
+<tr>
+<td><code>gcloud scc settings describe</code></td>
+<td>Check which SCC tier (Standard/Premium) is active.</td>
+</tr>
+<tr>
+<td><code>gcloud access-context-manager perimeters create</code></td>
+<td>Wrap projects in a VPC-SC perimeter.</td>
+</tr>
+<tr>
+<td><code>--add-egress-policies</code> / <code>--add-ingress-policies</code></td>
+<td>Punch a scoped exception through a perimeter.</td>
+</tr>
+<tr>
+<td><code>perimeters dry-run enforce</code></td>
+<td>Test a perimeter's impact before enforcing it.</td>
+</tr>
+<tr>
+<td><code>gcloud container binauthz policy import</code></td>
+<td>Require signed/attested images at deploy time.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-project-multi-tier-cicd-pipeline"><a href="../level-3/10-project-cicd-pipeline/">10 · Project — Multi-Tier CI/CD Pipeline</a><a class="headerlink" href="#10-project-multi-tier-cicd-pipeline" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute shared-vpc enable</code> / <code>associated-projects add</code></td>
+<td>Wire a service project into a Shared VPC host.</td>
+</tr>
+<tr>
+<td><code>gcloud builds triggers create github</code></td>
+<td>Auto-build on push to main.</td>
+</tr>
+<tr>
+<td><code>gcloud workflows deploy</code> / <code>execute</code></td>
+<td>Canary-gate the actual rollout logic.</td>
+</tr>
+<tr>
+<td><code>sys.sleep</code> in a workflow</td>
+<td>Soak period before judging canary health.</td>
+</tr>
+<tr>
+<td>Workload Identity KSA/GSA binding</td>
+<td>Pod-level read-only BigQuery access, no keys.</td>
+</tr>
+<tr>
+<td><code>gcloud scc findings list --filter=</code></td>
+<td>Continuous drift/misconfig detection.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="level-4-master">Level 4 · Master<a class="headerlink" href="#level-4-master" title="Permanent link">&para;</a></h2>
+<h3 id="01-gcp-architecture-framework"><a href="../level-4/01-architecture-framework/">01 · GCP Architecture Framework</a><a class="headerlink" href="#01-gcp-architecture-framework" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud recommender recommendations list</code></td>
+<td>Pull automated cost/security/performance suggestions.</td>
+</tr>
+<tr>
+<td><code>gcloud recommender recommendations mark-claimed</code></td>
+<td>Record that you're acting on a recommendation.</td>
+</tr>
+<tr>
+<td><code>gcloud resource-manager folders create</code></td>
+<td>Build landing-zone folder structure under an org.</td>
+</tr>
+<tr>
+<td>Five pillars (Ops, Security, Reliability, Cost, Performance)</td>
+<td>The lens for every architecture review.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="02-advanced-serverless-eventarc-at-scale"><a href="../level-4/02-advanced-serverless-eventarc/">02 · Advanced Serverless (Eventarc at Scale)</a><a class="headerlink" href="#02-advanced-serverless-eventarc-at-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud eventarc triggers create --event-filters=type=</code></td>
+<td>Wire a GCP event type to a Cloud Run destination.</td>
+</tr>
+<tr>
+<td><code>google.cloud.audit.log.v1.written</code></td>
+<td>React to any Cloud Audit Log entry (Admin Activity or Data Access).</td>
+</tr>
+<tr>
+<td><code>roles/pubsub.publisher</code> on GCS service agent</td>
+<td>Required for GCS-sourced Eventarc triggers to actually fire.</td>
+</tr>
+<tr>
+<td><code>--enable-message-ordering</code> + <code>--dead-letter-topic</code></td>
+<td>Add ordering guarantees and a failure backstop via Pub/Sub.</td>
+</tr>
+<tr>
+<td>Idempotency key by event ID/generation</td>
+<td>Required because delivery is at-least-once.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-data-analytics-bigquery-dataflow-dataproc"><a href="../level-4/03-data-analytics-bigquery/">03 · Data Analytics (BigQuery, Dataflow, Dataproc)</a><a class="headerlink" href="#03-data-analytics-bigquery-dataflow-dataproc" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PARTITION BY DATE(...)</code> / <code>CLUSTER BY</code></td>
+<td>Reduce bytes scanned, and cost, on large tables.</td>
+</tr>
+<tr>
+<td><code>bq query --dry_run</code></td>
+<td>Estimate bytes scanned before running a query for real.</td>
+</tr>
+<tr>
+<td><code>gcloud dataflow jobs list --status=active</code></td>
+<td>Catch forgotten, still-billing streaming jobs.</td>
+</tr>
+<tr>
+<td><code>gcloud dataflow jobs cancel</code></td>
+<td>Stop a streaming pipeline explicitly.</td>
+</tr>
+<tr>
+<td><code>gcloud dataproc clusters create --max-idle=</code></td>
+<td>Auto-delete an idle ephemeral Spark cluster.</td>
+</tr>
+<tr>
+<td><code>gcloud dataproc jobs submit pyspark</code></td>
+<td>Run a Spark job against a Dataproc cluster.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04-kubernetes-at-scale-gke-production-patterns"><a href="../level-4/04-gke-at-scale/">04 · Kubernetes at Scale (GKE Production Patterns)</a><a class="headerlink" href="#04-kubernetes-at-scale-gke-production-patterns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--enable-dataplane-v2</code></td>
+<td>Required at cluster creation for NetworkPolicy enforcement.</td>
+</tr>
+<tr>
+<td><code>ResourceQuota</code> per namespace</td>
+<td>Hard-cap CPU/memory/pod count per team.</td>
+</tr>
+<tr>
+<td>Argo Rollouts <code>canary.steps</code></td>
+<td>Weighted, paused, metric-gated progressive delivery.</td>
+</tr>
+<tr>
+<td><code>gcloud container fleet config-management apply</code></td>
+<td>GitOps-sync manifests across a cluster fleet.</td>
+</tr>
+<tr>
+<td><code>--autoscaling-profile=optimize-utilization</code></td>
+<td>Trade scheduling latency for higher bin-packing efficiency.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="05-multi-project-strategy-organizations-folders"><a href="../level-4/05-multi-project-strategy/">05 · Multi-Project Strategy (Organizations, Folders)</a><a class="headerlink" href="#05-multi-project-strategy-organizations-folders" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud resource-manager folders create</code></td>
+<td>Build the org's folder hierarchy.</td>
+</tr>
+<tr>
+<td><code>gcloud projects create --folder=</code></td>
+<td>Place a new project under a specific folder.</td>
+</tr>
+<tr>
+<td><code>gcloud logging sinks create --include-children</code></td>
+<td>Centralize logs org-wide into one destination.</td>
+</tr>
+<tr>
+<td><code>gcloud billing projects link</code></td>
+<td>Attach a project to a billing account (required for billable resources).</td>
+</tr>
+<tr>
+<td><code>gcloud billing budgets create --filter-projects=</code></td>
+<td>Budget alert scoped to a folder's set of projects.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="06-cost-optimization-at-scale"><a href="../level-4/06-cost-optimization-at-scale/">06 · Cost Optimization at Scale</a><a class="headerlink" href="#06-cost-optimization-at-scale" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud compute commitments create</code></td>
+<td>Lock in a CUD for a sustained usage floor.</td>
+</tr>
+<tr>
+<td><code>gcloud recommender recommendations list ...MachineTypeRecommender</code></td>
+<td>Get automated rightsizing suggestions.</td>
+</tr>
+<tr>
+<td><code>gcloud compute disks list --filter="-users:*"</code></td>
+<td>Find unattached (orphaned) persistent disks.</td>
+</tr>
+<tr>
+<td><code>gcloud compute addresses list --filter="status=RESERVED"</code></td>
+<td>Find reserved IPs not attached to a resource.</td>
+</tr>
+<tr>
+<td><code>--labels=team=,env=,cost-center=</code></td>
+<td>Enable per-team/per-env cost attribution via billing export.</td>
+</tr>
+<tr>
+<td>Billing export to BigQuery</td>
+<td>Turn cost analysis into a repeatable SQL query.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="07-advanced-networking-interconnect-network-connectivity-center"><a href="../level-4/07-advanced-networking/">07 · Advanced Networking (Interconnect, Network Connectivity Center)</a><a class="headerlink" href="#07-advanced-networking-interconnect-network-connectivity-center" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud network-connectivity hubs create</code></td>
+<td>Create an NCC hub for non-transitive-peering-free mesh connectivity.</td>
+</tr>
+<tr>
+<td><code>spokes linked-vpc-network create</code></td>
+<td>Attach a VPC as a spoke to the hub.</td>
+</tr>
+<tr>
+<td><code>spokes linked-interconnect-attachments create</code></td>
+<td>Attach an on-prem Interconnect link as a hub spoke.</td>
+</tr>
+<tr>
+<td><code>gcloud compute forwarding-rules create --target-service-attachment=</code></td>
+<td>Consume a service privately via PSC.</td>
+</tr>
+<tr>
+<td><code>gcloud compute routers nats update --min-ports-per-vm=</code></td>
+<td>Avoid NAT port exhaustion for connection-heavy VMs.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="08-compliance-governance-assured-workloads-policy-intelligence"><a href="../level-4/08-compliance-governance/">08 · Compliance &amp; Governance (Assured Workloads, Policy Intelligence)</a><a class="headerlink" href="#08-compliance-governance-assured-workloads-policy-intelligence" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gcloud assured workloads create --compliance-regime=</code></td>
+<td>Provision a regime-templated compliance folder.</td>
+</tr>
+<tr>
+<td><code>gcloud recommender ... google.iam.policy.Recommender</code></td>
+<td>Surface overprivileged IAM grants.</td>
+</tr>
+<tr>
+<td><code>gcloud asset analyze-iam-policy --full-resource-name= --permissions=</code></td>
+<td>Answer "who can do X" org-wide.</td>
+</tr>
+<tr>
+<td><code>gcloud org-policies set-policy gcp.resourceLocations</code></td>
+<td>Enforce data residency at org/folder scope.</td>
+</tr>
+<tr>
+<td><code>gsutil rewrite -k -r</code></td>
+<td>Re-encrypt existing objects after retrofitting CMEK.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="09-chaos-engineering-resilience-testing"><a href="../level-4/09-chaos-engineering-resilience/">09 · Chaos Engineering &amp; Resilience Testing</a><a class="headerlink" href="#09-chaos-engineering-resilience-testing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Concept / Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steady-state hypothesis first</td>
+<td>Define "normal" before injecting failure.</td>
+</tr>
+<tr>
+<td><code>gcloud compute instance-groups managed resize --size=0</code></td>
+<td>Simulate a zonal capacity loss.</td>
+</tr>
+<tr>
+<td>Istio/mesh <code>VirtualService</code> fault injection</td>
+<td>Simulate downstream latency/errors without real outages.</td>
+</tr>
+<tr>
+<td><code>kubectl run ... stress</code> + <code>ResourceQuota</code></td>
+<td>Validate resource isolation actually holds under load.</td>
+</tr>
+<tr>
+<td>Scheduled game days</td>
+<td>Keep chaos testing a recurring practice, not a one-off.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Go deeper with the full <a href="../">GCP Mastery Path</a> curriculum or test yourself with the <a href="../interview-questions/">interview questions</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <nav class="mp-related" aria-label="Related free courses">
+    <h2>Related free courses</h2>
+    <ul>
+      <li><a href="https://learnmasterypath.com/aws-mastery-path/">AWS</a></li><li><a href="https://learnmasterypath.com/azure-mastery-path/">Azure</a></li><li><a href="https://learnmasterypath.com/ibm-cloud-mastery-path/">IBM Cloud</a></li><li><a href="https://learnmasterypath.com/adobe-mastery-path/">Adobe</a></li>
+      <li><a href="https://learnmasterypath.com/">All 100+ courses &rarr;</a></li>
+    </ul>
+  </nav>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../interview-questions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interview Questions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Interview Questions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../level-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+  <div class="mp-foot">
+    <div class="mp-foot-inner">
+      <a class="mp-foot-brand" href="https://learnmasterypath.com/"><svg class="mp-mark" viewBox="0 0 160 160" role="img" aria-label="Mastery Path logo">
+  <circle cx="80" cy="80" r="74" fill="#FAF7EF" stroke="#2FA98D" stroke-width="5"/>
+  <rect class="mp-bar mp-bar-1" x="36" y="90" width="17" height="24" rx="5" fill="#2FA98D"/>
+  <rect class="mp-bar mp-bar-2" x="59" y="74" width="17" height="40" rx="5" fill="#7FC9B7"/>
+  <rect class="mp-bar mp-bar-3" x="82" y="56" width="17" height="58" rx="5" fill="#E0B457"/>
+  <rect class="mp-bar mp-bar-4" x="105" y="38" width="17" height="76" rx="5" fill="#C97B4A"/>
+  <circle class="mp-dot" cx="44.5" cy="82" r="7" fill="#22261f"/>
+</svg><span>Mastery Path</span></a>
+      <nav class="mp-sitelinks" aria-label="Site and legal links">
+        <a href="https://learnmasterypath.com/">All courses</a>
+        <a href="https://learnmasterypath.com/about.html">About</a>
+        <a href="https://learnmasterypath.com/contact.html">Contact</a>
+        <a href="https://learnmasterypath.com/gcp-mastery-path/privacy/">Privacy Policy</a>
+        <a href="https://learnmasterypath.com/terms.html">Terms</a>
+        <a href="https://learnmasterypath.com/gcp-mastery-path/license/">License</a>
+        <a href="https://learnmasterypath.com/verify/">Verify a certificate</a>
+      </nav>
+    </div>
+    <p class="mp-license-note">
+      © 2026 Vinod Kumar Sigilipelli · Except where otherwise noted, lesson content is licensed under
+      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and code examples under the
+      <a href="https://opensource.org/license/mit">MIT License</a>.
+    </p>
+  </div>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.path", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../javascripts/progress-tracker.js"></script>
+      
+        <script src="../javascripts/final-quiz.js"></script>
+      
+    
+  </body>
+</html>
